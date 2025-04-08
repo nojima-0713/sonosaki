@@ -1,0 +1,223 @@
+// main: ../single.scss
+@use '../mixin/mixin' as *;
+
+
+
+.content--block{
+  position: relative;
+  background-color: $sub-color;
+  padding-bottom: 5%;
+}
+
+.content--block-inner{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 93%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  @include tab{
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  @include sp{
+    padding: 0;
+    margin-bottom: 14%;
+  }
+}
+
+article.article-content{
+  width: 71%;
+  padding: 6% 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  margin-top: 5%;
+
+  @include tab{
+    width: 100%;
+    padding: 6% 5%;
+  }
+  @include sp{
+    padding: 5%;
+    padding-bottom: 10%;
+    margin-top: 9%;
+  }
+}
+
+.article-info{
+  width: 100%;
+  border-bottom: 2px solid $main-color;
+}
+
+.arc-info-box{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 2%;
+  .single-day{
+    color: #bccbe4;
+  }
+  .single-cat{
+    color: $main-color;
+    font-size: 13px;
+    padding: 1px 9px;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    align-items: center;
+    &::before{
+      content: '';
+      background-image: url(../images/folder-fill.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 15px;
+      height: 15px;
+      display: inline-block;
+      vertical-align: text-bottom;
+      margin-right: 2px;
+    }
+  }
+}
+
+.article-title-s{
+  text-align: justify;
+  margin: 0 0 1%;
+  position: relative;
+  font-size: clamp(22px, 2vw, 28px);
+  color: $main-color;
+  @include sp{
+    margin: 7% 0 5%;
+  }
+  &:before {
+    position: absolute;
+    bottom: -7px;
+    width: 100%;
+    height: 4px;
+    content: '';
+  }
+}
+
+.single-inner{
+  margin-top: 1em;
+  width: 90%;
+  h2{
+    font-size: clamp(20px, 2vw, 27px);
+  }
+  p{
+    letter-spacing: .5px;
+    text-align: justify;
+    line-height: 1.7;
+  }
+  .has-large-font-size{
+    border-bottom: 3px solid $sub-color;
+    padding-bottom: 0;
+    line-height: 1.2;
+    margin-bottom: 2%;
+    margin-top: 8%;
+    font-weight: bold;
+    color: $main-color;
+  }
+  .wp-block-group__inner-container{
+    margin-bottom: 4%;
+    margin-top: 6%;
+    & > p{
+      font-weight: bold;
+      color: $main-color;
+    }
+  }
+  .wp-block-file:not(.wp-element-button) {
+    font-size: 1em;
+  }
+  .wp-block-file{
+    & > a{
+      color: rgb(74, 110, 240);
+      text-decoration: underline;
+    }
+  }
+  .wp-block-file *+.wp-block-file__button{
+    padding: 2px 8px;
+    color: white;
+    text-decoration: none;
+  }
+  @include sp{
+    width: 100%;
+    .wp-block-file .wp-block-file__embed {
+      display: none;
+    }
+    .wp-block-file * + .wp-block-file__button{
+      margin-left: 0;
+    }
+  }
+
+  .single-linkbtn{
+    margin-bottom: 10px;
+    text-align: center;
+    transition: all 0.5s ease;
+    margin-top: 3%;
+    a{
+      margin: 0 auto;
+      padding: 10px 5em 10px 4em;
+      text-align: center;
+      transition: all 0.5s ease;
+      background-size: 200% auto;
+      color: white;
+      display: block;
+      border: 0px;
+      font-weight: 700;
+      background-color: $main-color;
+      position: relative;
+      font-size: initial;
+      &::before{
+        content: '';
+        background-image: url(../images/pdf-icon.svg);
+        width: 23px;
+        height: 26px;
+        font-weight: bold;
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 33%;
+        @include sp{
+          left: 28%;
+        }
+      }
+      @include sp{
+        padding: 10px 1em;
+      }
+    }
+    &:hover{
+      transform: translateY(-5px);
+      a{
+        background-color: #3058c1;;
+      }
+    }
+  }
+}
+
+p.single-in-tit{
+  color: $main-color;
+  font-weight: bold;
+}
+
+.wp-block-image {
+  margin-top: 1em;
+  text-align: center;
+  img{
+    height: auto;
+    border: 1px solid #e7e7e7;
+  }
+}
+
+.pdf-link-block{
+  text-align: center;
+}
+
+

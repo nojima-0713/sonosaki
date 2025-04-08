@@ -1,0 +1,95 @@
+// main: ../archive.scss
+
+@use '../mixin/mixin' as *;
+
+.m-pagenation{
+  width: 100%;
+  margin-top: 2%;
+  @include sp{
+    margin-top: 6%;
+    margin-bottom: 6%;
+  }
+}
+
+.m-pagenation__body{
+  z-index: 2;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  li{
+    margin: 0 5px;
+    color: $font-color;
+    font-weight: 500;
+    font-size: 14px;
+    @include animation;
+    transition-property: color;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    transition: all .3s ease;
+    a{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      position: relative;
+      color: white;
+      &:after{
+        background: $main-color;
+        position: absolute;
+        z-index: -1;
+        content: '';
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        transition: all .3s ease;
+      }
+    }
+    &:hover{
+      a{
+        &:after{
+          background: #000d4f;
+        }
+      }
+    }
+  }
+  li.-current{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $main-color;
+    &:after{
+      background: white;
+      border: 1px solid $main-color;
+      position: absolute;
+      z-index: -1;
+      content: '';
+      width: 98%;
+      height: 98%;
+      top: 0;
+      left: 0;
+      right: 0;
+      transition: all .3s ease;
+    }
+  }
+
+  li.notNumbering{
+    border: none;
+    pointer-events: none;
+  }
+
+  svg.pager-svg{
+    fill: currentColor;
+  }
+
+}
+
+.m-pagenation__result{
+  text-align: center;
+  margin-top: 5px;
+  font-size: 12px;
+}

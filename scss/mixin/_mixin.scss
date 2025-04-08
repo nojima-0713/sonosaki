@@ -1,0 +1,163 @@
+// main: ../style.scss
+
+/*
+ * 変数
+ */
+  $main-color: #004098;
+  $font-color: #333;
+  $sub-color: #F5FAFF;
+
+/*
+ * ブレークポイント
+ */
+  $pc: 1000px; // PC
+  $tab: 900px; // タブレット
+  $sp: 560px;  // スマホ
+  $sp-min: 330px;  // スマホ(SE)
+
+  @mixin pc {
+    @media (max-width: ($pc)) {
+      @content;
+    }
+  }
+
+  @mixin pc-max{
+    @media (min-width: ($pc)){
+      @content;
+    }
+  }
+
+  @mixin tab {
+    @media (max-width: ($tab)) {
+      @content;
+    }
+  }
+
+  @mixin tab-max {
+    @media (min-width: ($tab)) {
+      @content;
+    }
+  }
+
+  @mixin sp {
+    @media (max-width: ($sp)) {
+      @content;
+    }
+  }
+
+  @mixin sp-max {
+    @media (min-width: ($sp)) {
+      @content;
+    }
+  }
+
+  @mixin sp-min {
+    @media (max-width: ($sp-min)) {
+      @content;
+    }
+  }
+
+/*
+ * 560pxより広くなったら改行なくす
+ */
+.br_sp{
+  @include sp-max{
+    display: none;
+  }
+}
+
+/*
+ * 560pxより狭くなったら改行なくす
+ */
+ .sp_br{
+  @include sp{
+    display: none;
+  }
+}
+
+
+/*
+ * 780pxより広くなったら改行なくす
+ */
+.br_tab{
+  @include tab-max{
+    display: none;
+  }
+}
+
+/*
+ * 780pxより狭くなったら改行なくす
+ */
+.pc_br{
+  @include tab{
+    display: none;
+  }
+}
+
+/*
+ * トランジション
+ */
+@mixin animation{
+  transition: all 0.5s cubic-bezier(0.37, 0.16, 0.12, 1);
+}
+
+
+@mixin title{
+  color: $main-color ;
+  padding: 8px 0 12px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  text-align: center;
+  h2{
+    font-size: 2.5em;
+    font-style: italic;
+    font-weight: normal;
+    @include sp{
+      font-size: 3.5em;
+      line-height: 1.2;
+    }
+  }
+  span{
+    display: inline-block;
+  }
+}
+
+@mixin button{
+  padding: 9px 4em 9px 3em;
+  display: inline-block;
+  position: relative;
+  @include animation;
+  transition-property: box-shadow;
+  background-color: $main-color;
+  box-shadow: 7px 7px;
+  color: #000d4f;
+  text-align: center;
+  text-decoration: none;
+  span{
+    display: inline-block;
+    color: white;
+  }
+  i{
+    font-size: 1.5em;
+    line-height: 1;
+    vertical-align: middle;
+    color: white;
+    &::before{
+      @include animation;
+      display: inline-block;
+      transform: translate(0px, -2px);
+    }
+  }
+  &:hover{
+    box-shadow: -7px -7px;
+    i{
+      &::before{
+        transform: translate(11px, -2px);
+      }
+    }
+  }
+  @include sp{
+    margin: 6% 0;
+  }
+}

@@ -1,0 +1,181 @@
+// main: ../frontpage.scss
+
+@use '../mixin/mixin' as *;
+
+
+.news{
+  margin: 7% 0 11%;
+  position: relative;
+  @include tab{
+    margin: 7% 0 13%;
+  }
+  @include sp{
+    margin-bottom: 19%;
+  }
+
+  &-wrapp{
+    text-align: center;
+    padding-top: 3%;
+    @include sp{
+      padding-top: 0;
+    }
+  }
+
+  &-list-wrapp{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    max-width: 1100px;
+    @include sp{
+      padding: 1em 0;
+      border-radius: 1.5em;
+      width: 90%;
+      &:after{
+        left: 50%;
+        width: 107%;
+        transform: translateY(-50%) translateX(-50%) skewX(-13deg);
+      }
+    }
+  }
+
+
+
+  &-list{
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    @include sp{
+      margin-top: 6%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &_item{
+    display: flex;
+    flex-direction: column;
+    padding: 17px 13px;
+    justify-content: flex-start;
+    position: relative;
+    align-items: center;
+    width: 30%;
+    @include animation;
+    &:hover{
+      .news-image-block img{
+        transform: scale(1.05);
+      }
+    }
+    @include sp{
+      padding: 0;
+      width: 61%;
+      margin-bottom: 7%;
+    }
+  }
+
+  &-flex-block{
+    width: 100%;
+    max-width: 212px;
+    text-align: left;
+    margin-top: 12px;
+  }
+
+  &-image-block{
+    text-align: left;
+  }
+
+  &-image{
+    overflow: hidden;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    img{
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      max-height: 310px;
+      @include animation;
+    }
+    @include sp{
+      height: auto;
+      img{
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+
+  &_time{
+    display: inline-block;
+    font-size: 14px;
+    color: #b6b9c5;
+  }
+
+
+  &_in_title{
+    width: 100%;
+    text-align: left;
+    a{
+      @include animation;
+      transition-property: color;
+      width: 100%;
+      display: block;
+      font-weight: bold;
+      color: $main-color;
+      &::before{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        content: "";
+        background-color: transparent;
+      }
+    }
+    &:hover{
+      a{
+        color: #93a5e0;
+      }
+    }
+    @include tab{
+      margin-top: 5px;
+      text-align: center;
+
+    }
+    @include sp{
+      margin-left: 0;
+      margin-top: 0;
+      text-align: left;
+      a{
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &-link{
+    margin-top: 2%;
+    button{    
+      a{
+        @include button;
+        padding: 15px 3em 13px 3.5em;
+        font-size: 17px;
+        vertical-align: middle;
+        i{
+          font-size: 1.5em;
+          line-height: 1;
+          vertical-align: middle;
+          color: white;
+        }
+      }
+      
+    }
+    @include tab{
+      margin-top: 3%;
+    }
+    @include sp{
+      margin-top: 0;
+    }
+  }
+}
