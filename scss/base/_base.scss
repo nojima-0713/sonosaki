@@ -1,0 +1,91 @@
+// main: ../style.scss
+
+@use '../mixin/mixin' as *;
+
+body{
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif;
+  line-height: 1.5;
+  color: $font-color;
+  font-feature-settings: "palt";
+}
+
+_:lang(x)::-ms-backdrop, body, body.mceContentBody, .comment-btn, #bbp_reply_submit, .bp-login-widget-register-link a, .search-edit, input[type="submit"] , b, strong, .bold .article h2, .article h3, .article h4, .entry-card-title, .blogcard-title, .wp-block-button__link {
+	font-family: "Segoe UI", "メイリオ", Meiryo, sans-serif;
+}
+
+b, strong, .bold{
+	font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI semibold", "Helvetica Neue", HelveticaNeue, YuGothic, "Yu Gothic", "Segoe UI", Verdana, Meiryo, sans-serif;
+}
+
+.wrapper{
+  width: 100%;
+  overflow: hidden;
+  color: $font-color;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  font-size: 17px;
+  letter-spacing: .5px;
+  @include tab{
+    font-size: 16px;
+  }
+}
+
+//改行
+span.aks{
+  display: inline-block;
+}
+
+.page-wrapp{
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1000px;
+  margin-top: 10%;
+  @include tab{
+    margin-bottom: 12%;
+  }
+}
+
+.wp-block-buttons{
+  justify-content: center;
+}
+
+.main-tit{
+  @include title;
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+
+/*
+ * アニメーション
+ */
+
+ .sa {
+  opacity: 0;
+  transition: all .5s ease;
+}
+
+.sa.show {
+  opacity: 1;
+  transform: none;
+}
+
+.sa--up {
+  transform: translate(0px, 30px);
+}
+
+.sa--ri-up{
+  transform: translate(10px, -20px);
+}
+
+.sa--zoom{
+  transform: scale(0.8);
+}
+
+
+
+

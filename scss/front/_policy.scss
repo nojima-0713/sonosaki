@@ -1,0 +1,245 @@
+// main: ../frontpage.scss
+@use '../mixin/mixin' as *;
+
+.policy{
+  @include tab{
+    margin-top: 13%;
+  }
+  &-three{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    @include sp{
+      flex-direction: column;
+      margin-top: 6%;
+      margin-bottom: 9%;
+    }
+    &-tit{
+      width: 37%;
+      img{
+        width: 100%;
+      }
+      @include sp{
+        width: 61%;
+        margin-bottom: 3%;
+      }
+    }
+    &-text{
+      width: 70%;
+      padding-left: 4%;
+      @include sp{
+        width: 100%;
+        padding-left: 0;
+      }
+      &-line{
+        font-weight: bold;
+        line-height: 1;
+        position: relative;
+        padding: 6% 0 3% 0px;
+        @include sp{
+          line-height: 1.3;
+          text-align: center;
+          padding: 10% 0 3% 0px;
+        }
+        p{
+          color: $main-color;
+          font-size: 1.5em;
+          @include sp{
+            font-size: 1.3em;
+          }
+        }
+        & > span{
+          position: absolute;
+          color: #C1D4F0;
+          font-size: 3em;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          font-style: oblique;
+          font-weight: normal;
+          @include sp{
+            top: 2%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
+  &-top{
+    margin-top: 2%;
+    background-color: $main-color;
+    text-align: center;
+    padding: 2% 0;
+    img{
+      width: 100%;
+      max-width: 300px;
+      @include sp{
+        width: 97%;
+      }
+    }
+    @include sp{
+      padding: 9% 0;
+    }
+  }
+  &-box{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+
+    .p-box-image{
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 550px;
+      background-position: center;
+      @include tab{
+        height: 377px;
+      }
+      @include sp{
+        height: 231px;
+      }
+    }
+    .p-box-image-1{
+      background-image: url(../images/pol-01_2.jpg);
+    }
+    .p-box-image-2{
+      background-image: url(../images/pol-02_2.jpg);
+      background-position: center bottom 60%;
+    }
+    .p-box-image-3{
+      background-image: url(../images/pol-03.jpg);
+      background-position: center top 25%;
+    }
+    .p-box-image-4{
+      background-image: url(../images/pol-04.jpg);
+    }
+    .p-box-image-5{
+      background-image: url(../images/pol-05_2.jpg);
+      background-position: center 29%;
+      background-size: 100%;
+    }
+
+    .policy-text-wrapp{
+      width: 90%;
+      max-width: 1433px;
+      position: absolute;
+      margin: 0 auto;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      top: 0;
+      @include tab{
+        position: static;
+        width: 100%;
+      }
+    }
+
+
+    .policy-text{
+      position: absolute;
+      display: inline-block;
+      background-color: white;
+      width: 45%;
+      max-width: 473px;
+      bottom: 5%;
+      right: 3%;
+      @include tab{
+        position: static;
+        width: 100%;
+        max-width: none;
+      }
+      .pol-tit{
+        background-color: $main-color;
+        color: white;
+        display: flex;
+        align-items: flex-start;
+        padding: 2%;
+        &-num{
+          font-size: 5em;
+          font-style: italic;
+          color: #C8D9F0;
+          line-height: 1;
+          margin-top: -8%;
+          @include tab{
+            margin-top: 0;
+          }
+        }
+        p{
+          font-size: 2em;
+          font-weight: bold;
+          margin-left: 3%;
+        }
+        @include tab{
+          align-items: center;
+        }
+        @include sp{
+          padding: 4% 2%;
+        }
+      }
+      .pol-text{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 9%;
+
+        .pol-about{
+          a{
+            padding: 8px 1.5em 8px 2em;
+            display: flex;
+            position: relative;
+            @include animation;
+            transition-property: box-shadow;
+            color: $main-color;
+            text-align: center;
+            text-decoration: none;
+            border: 1px solid $main-color;
+            i{
+              font-size: 1.5em;
+              line-height: 1;
+              vertical-align: bottom;
+              &::before{
+                @include animation;
+                display: inline-block;
+                transform: translate(0px, 0px);
+              }
+            }
+            &:hover{
+              i{
+                &::before{
+                  transform: translate(11px, 0px);
+                }
+              }
+            }
+          }
+          @include sp{
+            margin-top: 4%;
+          }
+        }
+        @include tab{
+          padding: 7% 9%;
+        }
+        @include sp{
+          flex-direction: column;
+          padding: 10% 5%;
+          p{
+            text-align: center;
+          }
+        }
+      }
+    }
+    &:nth-child(odd){
+      .policy-text{
+        left: 3%;
+        right: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+//compileNested: ../css/$1.css
+@charset "UTF-8";
+@use './mixin/mixin' as *;
+
+.header {
+  height: 84px;
+  @include sp{
+    height: 60px;
+  }
+}
+
+.main-tit-block{
+  padding-top: calc(78px + 1%);
+  padding-bottom: 6%;
+  background-image: url("../images/top-back.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  position: relative;
+  .main-tit{
+    color: white;
+  }
+  @include tab{
+    padding: 66px 0 13%;
+  }
+  @include sp{
+    padding: 53px 0 11%;
+  }
+}
+
+.ov-grad{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(32,42,88,.5) 100%);
+
+}

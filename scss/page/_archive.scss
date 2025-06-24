@@ -1,0 +1,242 @@
+// main: ../archive.scss
+@use '../mixin/mixin' as *;
+
+.date-arc-tit{
+  font-weight: bold;
+  color: $main-color;
+  padding: 2%;
+  width: 100%;
+  background-color: $sub-color;
+  border-bottom: 1px solid $main-color;
+  margin-bottom: 4%;
+  span{
+    font-weight: normal;
+  }
+}
+
+.archive_box{
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 907px;
+  margin: 0 auto;
+  margin-top: 5%;
+  @include tab{
+    width: 100%;
+    padding-bottom: 3%;
+  }
+}
+
+.arc-list{
+  width: 100%;
+  margin-bottom: 3%;
+  position: relative;
+  pointer-events: none;
+  background-color: white;
+  border-bottom: 2px solid #c2d2eb;
+  @include tab{
+    margin-bottom: 4%;
+  }
+  @include sp{
+    width: 95%;
+    &:after{
+      transform: none;
+      width: 99%;
+    }
+  }
+}
+
+.arc-list:hover{
+
+  .tit-p{
+    color: $main-color;
+  }
+
+  .list_img_box{
+    img{
+      transform: scale(1.05);
+    }
+  }
+
+  .more-btn-box{
+    a{
+      box-shadow: -7px -7px;
+      i{
+        &::before{
+          transform: translate(8px, -2px);
+        }
+      }
+    }
+  } 
+}
+
+a.arc-wrap-link{
+  pointer-events: auto;
+  &::before{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    content: "";
+    background-color: transparent;
+  }
+}
+
+.list_box{
+  display: flex;
+  padding: 5% 7%;
+  justify-content: space-around;
+  @include animation;
+  transition-property: transform;
+  @include sp{
+    padding: 7%;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+.list_img_box{
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #80A1D0;
+  img{
+    max-width: 200px;
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  	@include animation;
+    transition-property: transform;
+  }
+}
+
+.arc-text-box{
+  width: 100%;
+  max-width: 420px;
+  margin-top: 7%;
+  margin-left: 5%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @include sp{
+    margin-top: 0;
+    margin-left: 0;
+  }
+}
+
+.more-btn-box{
+  align-self: flex-end;
+  margin-top: auto;
+  a{
+    @include button;
+    padding: 13px 3em 12px 3em;
+    font-size: 16px;
+  }
+  @include sp{
+    text-align: center;
+    width: 100%;
+    a{
+      margin: 0 0 4%;
+    }
+  }
+}
+
+p.archive-day{
+  color: #b0c8e1;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.arc-cat{
+  display: inline-block;
+  background-color: white;
+  color: $main-color;
+  font-size: 13px;
+  padding: 1px 3px;
+  white-space: nowrap;
+  position: relative;
+  &::before{
+    content: '';
+    background-image: url(../images/folder-fill.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    vertical-align: text-bottom;
+  }
+}
+
+.text-sp{
+  margin-bottom: 6px;
+  @include sp{
+    padding-top: 6%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 6px;
+  }
+}
+
+p.tit-p{
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 10px;
+  @include sp{
+    margin-top: 5px;
+  }
+}
+
+.category-select {
+  overflow: hidden;
+  width: 63%;
+  margin-left: 34%;
+  margin-bottom: 2%;
+  position: relative;
+  border-bottom: 2px solid $main-color;
+  &::before {
+  	position: absolute;
+  	top: 0.8em;
+  	right: 0.8em;
+  	width: 0;
+  	height: 0;
+  	padding: 0;
+  	content: '';
+  	border-left: 6px solid transparent;
+  	border-right: 6px solid transparent;
+  	border-top: 6px solid $main-color;
+  	pointer-events: none;
+  }
+  @include tab{
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 4%;
+  }
+}
+
+/*カテゴリーページ*/
+.category-select select {
+  padding: 8px 38px 8px 8px;
+  color: $main-color;
+	width: 100%;
+	padding-right: 1em;
+	cursor: pointer;
+	text-indent: 0.01px;
+	text-overflow: ellipsis;
+	border: none;
+	outline: none;
+  background: $sub-color;
+	box-shadow: none;
+	-webkit-appearance: none;
+	appearance: none;
+  font-size: 16px;
+}
+
+.category-select select::-ms-expand {
+  display: none;
+}

@@ -1,0 +1,68 @@
+// main: ../style.scss
+@use '../mixin/mixin' as *;
+
+#page-top{
+  background: $main-color;
+  position: fixed; /*固定*/
+  cursor: pointer;
+  font-size: 2.4em;
+  display: block;
+  width: 50px;
+  color: white;
+  height: 50px;
+  text-align: center;
+  right: 57px;
+  bottom: 92px;
+  @include animation;
+  transition: .5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  transition-property: transform,background-color;
+  &:hover{
+    transform: translate(0, -10px);
+    background-color: #3058c1;
+  }
+  @include sp{
+    bottom: 76px;
+    right: 17px;
+  }
+  i{
+    width: 100%;
+    height: 100%;
+    margin-top: 9%;
+    display: inline-block;
+  }
+}
+
+.btnFOut {
+  -webkit-animation-name: "FOut";
+  animation-name: 'FOut';
+  animation-duration: .5s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes FOut {
+  0% {
+    bottom: 20px;
+  }
+
+  100% {
+    bottom: -124px;
+  }
+}
+
+.btnFIn {
+  -webkit-animation-name: "FIn";
+  animation-name: 'FIn';
+  animation-duration: .5s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes FIn {
+  0% {
+    bottom: -90px;
+  }
+}
+

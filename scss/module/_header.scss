@@ -1,0 +1,477 @@
+// main: ../style.scss
+@use '../mixin/mixin' as *;
+//メニュー用mixin
+
+@mixin transform{
+  transition:
+  all .35s cubic-bezier(.37,.16,.12,1);
+}
+@mixin menu{
+  a{
+    overflow: hidden;
+    pointer-events: auto;
+  	cursor: pointer;
+  	border: none;
+  	margin: 0;
+  	font-family: inherit;
+  	position: relative;
+  	display: inline-block;
+    color: $font-color;
+    line-height: 2;
+
+    & span {
+      display: inline-block;
+      transition-duration: 0.7s;
+      transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background: currentColor;
+      top: 100%;
+      left: 0;
+      pointer-events: none;
+      color: $main-color;
+    }
+
+    &::before {
+      content: '';
+      height: 2px;
+      top: calc(100% - 2px);
+      transform-origin: 100% 50%;
+      transform: scale3d(0, 1, 1);
+      transition-duration: 0.4s;
+      transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    &:hover::before {
+      transform-origin: 0% 50%;
+      transform: scale3d(1, 1, 1);
+    }
+
+    &::after {
+      content: attr(data-text);
+      height: 100%;
+      top: 0;
+      background: none;
+      transform-origin: 100% 50%;
+      transform: translate3d(150%, 0, 0);
+      transition-duration: 0.7s;
+      transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+      text-align: center;
+    }
+
+    &:hover::after {
+    	transform: translate3d(0, 0, 0);
+    }
+
+    &:hover{
+     span{
+      transform: translate3d(-150%, 0, 0);
+     }
+    }
+
+  }
+}
+
+
+
+/*ここからヘッダー*/
+
+.header{
+  transition: all 1s cubic-bezier(0.37, 0.16, 0.12, 1) 2.2s;
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 78px;
+  @include sp{
+    height: 64px;
+  }
+}
+
+/*main-topを超えたら固定表示*/
+.header.fixed{
+  position: fixed;
+  top: 0;
+  background: transparent;
+  transition: all 1s cubic-bezier(0.37, 0.16, 0.12, 1);
+}
+
+.header-top{
+  width: 100%;
+  z-index: 9998;
+  transition: .5s;
+  display: flex;
+  align-items: center;
+  position: relative;
+  @include tab{
+    align-items: flex-end;
+  }
+}
+
+.header-top-back{
+  width: 100%;
+  margin: 0 auto;
+  padding: 12px 4px;
+  background: rgb(255,255,255);
+  transition: all 0.6s cubic-bezier(1,0,0,1) 0s;
+  @include sp{
+    padding: 11px 0;
+  }
+}
+
+
+.header-top-back-inner{
+  width: 95%;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  transition: .8s ease;
+  max-width: 1200px;
+  @include sp{
+    align-items: center;
+  }
+}
+
+.header-nav-name{
+  line-height: 1;
+  a{
+    display: inline-block;
+  }
+  img{
+    max-width: 260px;
+    width: 100%;
+    @include sp{
+      max-width: 193px;
+    }
+  }
+}
+
+.menu-header{
+  display: flex;
+  font-weight: 600;
+  justify-content: space-around;
+  align-items: center;
+  width: 74%;
+  @include tab{
+    display: none;
+  }
+
+  &-link{
+    display: flex;
+    align-items: flex-end;
+    @include menu;
+    position: relative;
+    &:hover{
+      @include animation;
+    }
+  }
+
+  &-link.current{
+    color: $main-color;
+    position: relative;
+    @include animation;
+    &::before{
+      content: '';
+      width: 30%;
+      top: -6px;
+      right: 0;
+      left: 0;
+      margin: auto;
+      height: 3px;
+      background: $main-color;
+      position: absolute;
+      @include animation;
+    }
+  }
+}
+
+.h-sns-link{
+  font-weight: normal;
+  a{
+    font-size: 1.4em;
+    margin-left: 9px;
+    i{
+      color: $main-color;
+      font-weight: normal;
+      @include animation;
+    }
+    &:hover{
+      i{
+        color: #041c61;
+      }
+    }
+  }
+}
+
+#gloval-nav{
+  display: none;
+}
+
+#nav-toggle{
+  display: none;
+}
+
+@include tab{
+
+ /*
+ * タブレット・スマホメニューボタン
+ */
+ #nav-toggle,
+ #nav-toggle span {
+   display: inline-block;
+   box-sizing: border-box;
+ }
+ #nav-toggle {
+   position: absolute;
+   right: 0;
+   width: 71px;
+   height: 71px;
+   border: none;
+   appearance: none;
+   cursor: pointer;
+   overflow: hidden;
+ }
+ #nav-toggle:focus:not(:focus-visible) {
+   outline: none;
+ }
+ #nav-toggle::before,
+ #nav-toggle::after {
+   content: '';
+ }
+ #nav-toggle::before,
+ #nav-toggle::after,
+ #nav-toggle span {
+   position: absolute;
+   margin: auto;
+   width: 56%;
+   right: 0;
+   left: 0;
+   height: 4px;
+   background: $main-color;
+   -webkit-transition: all 0.6s cubic-bezier(1, 0, 0, 1) 0s;
+   transition: all 0.6s cubic-bezier(1, 0, 0, 1) 0s;
+ }
+ #nav-toggle::before {
+   top: 14px;
+   left: 14px;
+   transform-origin: 0 0;
+   transform: rotate(44deg) scaleX(0);
+   transition-delay: 0s;
+ }
+ #nav-toggle::after {
+   top: 14px;
+   right: 14px;
+   transform-origin: 100% 0;
+   transform: rotate(-44deg) scaleX(0);
+   transition-delay: .2s;
+ }
+ #nav-toggle span:nth-of-type(-n+3) {
+   right: 0;
+   transform-origin: 100% 0;
+   transition-delay: .5s;
+ }
+ #nav-toggle span:nth-of-type(1) {
+   top: 15px;
+ }
+ #nav-toggle span:nth-of-type(2) {
+   top: 26px;
+ }
+ #nav-toggle span:nth-of-type(3) {
+   bottom: 30px;
+ }
+ .open {
+   #nav-toggle::before {
+     transform: rotate(44deg) scaleX(1);
+     transition-delay: .6s;
+     background-color: $main-color;
+   }
+   #nav-toggle::after {
+     transform: rotate(-44deg) scaleX(1);
+     transition-delay: .8s;
+     background-color: $main-color;
+   }
+   #nav-toggle span:nth-of-type(-n+3) {
+     transform: scaleX(0);
+   }
+   #nav-toggle span:nth-of-type(1) {
+     transition-delay: .1s;
+   }
+   #nav-toggle span:nth-of-type(2) {
+     transition-delay: .18s;
+   }
+   #nav-toggle span:nth-of-type(3) {
+     transition-delay: .26s;
+   }
+ }
+}
+  /*
+   * スマホメニュー本体
+   */
+
+   .nav-container {
+    width: 0;
+    height: 100vh;
+    padding: 4em 0 8em;
+    background-color: $sub-color;
+    position: absolute;
+    right: 0;
+    overflow: hidden;
+    -webkit-transition: all .7s cubic-bezier(.39,.94,.53,1.01);
+    transition: all .7s cubic-bezier(.39,.94,.53,1.01);
+    visibility: hidden;
+    z-index: 2;
+  }
+
+  .nav-text-block{
+    width: 87%;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  ul.nav-menu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+
+  ul.nav-menu li {
+    width: 100%;
+    list-style-type: none;
+    text-align: right;
+    opacity: 0;
+    transform: translate3d(0,10px,0);
+    transition: opacity .8s cubic-bezier(.22,.11,.22,1) .5s,transform 1s cubic-bezier(.215,.61,.355,1) .5s;
+    border-bottom: 1px dashed $main-color;
+    & + li{
+      border-top: none;
+    }
+    a {
+      width: 93%;
+      text-decoration: none;
+      color: $main-color;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+      transition: 0.2s ease;
+      padding: 20px 0 20px 22px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .sp-en{
+      font-weight: normal;
+      font-size: .7em;
+    }
+  }
+
+
+  .nav-menu .nav-menu-list8{
+    align-items: baseline;
+    justify-content: flex-start;
+    opacity: 0;
+    transform: translate(0,10px);
+    flex-direction: row;
+    display: flex;
+    border-bottom: none;
+    a{
+      height: auto;
+      font-size: 2em;
+      width: auto;
+      margin: 9px 6px 9px;
+      padding: 8px;
+      color: $main-color;
+      font-weight: 500;
+    }
+  }
+
+  #menu-text{
+    display: inline-block;
+    color: $main-color;
+    transition: opacity .3s ease;
+    position: absolute;
+    top: 48px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    transform: skew(-12deg,0);
+    font-size: .8em;
+    @include sp{
+      top: 43px;
+    }
+  }
+
+
+
+  //open
+  .open {
+    overflow: hidden;
+    #menu-text{
+      opacity: 1;
+      transition: opacity 0.6s cubic-bezier(1, 0, 0, 1) .8s;
+    }
+
+    .nav-container{
+      -webkit-transition: all 1s cubic-bezier(.39,.94,.53,1.01);
+      transition: all 1s cubic-bezier(.39,.94,.53,1.01);
+      opacity: 1;
+      visibility: visible;
+      width: 100vw;
+    }
+
+    .nav-menu-list1{
+      opacity: 1;
+      transition: opacity .8s cubic-bezier(.22,.11,.22,1) .5s;
+      animation: ops 1s ease forwards .6s;
+    }
+    .nav-menu-list2{
+      opacity: 1;
+      transition: opacity .8s cubic-bezier(.22,.11,.22,1) .55s;
+      animation: ops 1s ease forwards .65s;
+    }
+    .nav-menu-list3{
+      opacity: 1;
+      transition: opacity .8s cubic-bezier(.22,.11,.22,1) .6s;
+      animation: ops 1s ease forwards .7s;
+    }
+    .nav-menu-list4{
+      opacity: 1;
+      transition: opacity .8s cubic-bezier(.22,.11,.22,1) .65s;
+      animation: ops 1s ease forwards .75s;
+    }
+    .nav-menu-list5{
+      opacity: 1;
+      transition: opacity .8s cubic-bezier(.22,.11,.22,1) .7s;
+      animation: ops 1s ease forwards .8s;
+    }
+    .nav-menu-list6{
+      opacity: 1;
+      transition: opacity .8s cubic-bezier(.22,.11,.22,1) .75s;
+      animation: ops 1s ease forwards .85s;
+    }
+    .nav-menu-list7{
+      opacity: 1;
+      transition: opacity .8s cubic-bezier(.22,.11,.22,1) .8s;
+      animation: ops 1s ease forwards .9s;
+    }
+    .nav-menu-list8{
+      opacity: 1;
+      transition: opacity .8s cubic-bezier(.22,.11,.22,1) .8s;
+      animation: ops 1s ease forwards .95s;
+    }
+
+  }
+
+  @keyframes ops{
+    100% {
+      opacity: 1;
+      transform: translate(0px, 0px);
+    }
+  }

@@ -1,0 +1,340 @@
+//compileNested: ../css/$1.css
+@use '../mixin/mixin' as *;
+
+
+#supporter{
+  margin-bottom: 11%
+}
+/*後援会フォーム*/
+
+.sp-top-block{
+  position: relative;
+  width: 100%;
+  margin-top: 0;
+  text-align: center;
+  background-color: $main-color;
+  padding: 6% 0;
+}
+
+
+.main-tit{
+  color: white;
+  h2{
+    @include sp{
+      font-size: 2.5em;
+    }
+  }
+}
+
+.sp-at{
+  text-align: justify;
+  width: 95%;
+  margin: 0 auto;
+  max-width: 926px;
+  padding: 2em 3em;
+  background: $sub-color;
+  margin-top: 3%;
+  margin-bottom: 6%;
+  @include sp{
+    padding: 2em 1.6em;
+    margin-top: 6%;
+    margin-bottom: 10%;
+    font-size: 15px;
+  }
+}
+
+.con-top-p{
+  color: white;
+  width: 90%;
+  margin: 0 auto;
+  padding: 3% 0;
+}
+
+
+.smf-form--simple-table .smf-item {
+  display: flex;
+  padding: 0;
+  @include sp{
+    flex-direction: column;
+  }
+}
+
+.smf-form--simple-table {
+  .sptitle-wrapp{
+    margin: 0 auto;
+    border-left: 8px solid $main-color;
+    padding: 7px 0;
+    margin-bottom: 3%;
+    .smf-item__col{
+      font-weight: bold;
+      font-size: 1.2em;
+      display: inline-block;
+      padding-left: 20px;
+    }
+  }
+
+
+.mailform-table-wrap{
+  margin-bottom: 8%;
+}
+
+.formtitle{
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  display: inline-block;
+  padding-left: 20px;
+  p{
+    display: inline-block;
+  }
+}
+
+.form-sub-text{
+  margin: 0 auto;
+  width: 100%;
+  padding: 3%;
+  background: $sub-color;
+  margin-top: 2%;
+  strong{
+    display: inline-block;
+    font-weight: bold;
+    color: #4245a4;
+  }
+  @include sp{
+    padding: 4% 3%;
+    margin-top: 4%;
+  }
+}
+
+.in-form-title{
+  text-align: center;   
+  margin-top: 8%;
+  span{
+    background: #ccc;
+    color: #fff;
+    padding: 2px 10px;
+    vertical-align: text-bottom;
+    font-size: .8em;
+    margin-right: 6px;
+  }
+}
+
+.formtitle-sub{
+  margin-top: 10%;
+  @include sp{
+    margin-top: 12%;
+  }
+}
+}
+
+/*リキャプチャの説明*/
+.recaptcha_policy{
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 3%;
+  a{
+    color: #5f71b4;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  @include sp{
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 25%;
+  }
+}
+
+
+
+
+
+.snow-monkey-form{
+  margin-top: 7%;
+}
+
+.smf-form--simple-table{
+  width: 90%;
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 2% 0 1%;
+  margin-bottom: 3%;
+}
+
+.smf-complete-content{
+  text-align: center;
+}
+
+
+.smf-form--simple-table .in-form-title{
+  text-align: center;
+  margin: 9% 0 3%;
+  padding: 1% 0;
+  .no-must{
+    &::after{
+      content: "任意";
+      display: inline-block;
+      background: #cacaca;
+      color: white;
+      font-size: 0.75em;
+      padding: 1px 6px;
+      vertical-align: text-top;
+      margin-left: 8px;
+    }
+  }
+  @include sp{
+    margin: 13% 0 6%;
+    padding: 3% 0px;
+  }
+}
+
+.last-column{
+
+  .smf-placeholder{
+    border-bottom: 1px solid #e4e4e4;
+    @include sp{
+      border-bottom: 1px solid $main-color;
+    }
+  }
+   .smf-item__col--label{
+    border-bottom: 1px solid $main-color;
+    @include sp{
+      border-bottom: none;
+    }
+  }
+}
+
+.smf-placeholder{
+  padding: 2rem 0 2rem 1rem;
+  border-top: 1px solid #e4e4e4;
+  @include sp{
+    padding: 0rem 0 2rem;
+    border-top: none;
+    text-align: center;
+  }
+}
+
+
+.smf-form--simple-table .smf-item__col--label{
+  flex: auto;
+  max-width: 36%;
+  padding: 2rem 0 2rem 1rem;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid $main-color;
+  font-weight: bold;
+  @include sp{
+    max-width: 101%;
+    padding: 1rem 0 1rem 1rem;
+    border-right: none;
+  }
+}
+
+.smf-form .smf-item .smf-text-control__control{
+  width: 98%;
+  border: none;
+  background: #e4e9ee;
+  padding: 21px 9px;
+  height: 22px;
+  box-sizing: border-box;
+  border: 2px solid #e4e9ee;
+  box-shadow: none;
+  font-size: inherit;
+  font-weight: normal;
+  font-family: inherit;
+  border-radius: 0;
+  @include tab{
+    height: 21px;
+  }
+  @include sp{
+    width: 94%;
+  }
+}
+
+
+.smf-action .smf-button-control__control {
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+  color: #fff;
+  border-style: none;
+  background-color: #004098;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  box-sizing: border-box;
+  width: auto;
+  font-size: 1em;
+  border: none;
+  border-radius: 0;
+  padding: 18px 6em;
+  transition: .2s ease;
+  @include sp{
+    padding: 18px 5em;
+  }
+}
+
+.smf-action .smf-button-control__control:hover {
+  background-color: #002b67;
+  color: white;
+}
+
+.smf-form .smf-item .smf-text-control__control:active, .smf-form .smf-item .smf-text-control__control:focus, .smf-form .smf-item .smf-text-control__control:focus-within, .smf-form .smf-item .smf-text-control__control[aria-selected=true]{
+  border: 2px solid $main-color;
+  background-color: $main-color;
+  color: white;
+}
+
+.smf-form .smf-item .smf-text-control__control:focus{
+  border: 2px solid $main-color;
+  background-color: white;
+  color: $font-color;
+}
+
+.smf-form .smf-item .smf-text-control__control:hover{
+  border-color: $main-color;
+}
+
+.smf-action .smf-button-control__control[data-action="back"]{
+  display: inline-block;
+  color: #717171;
+  background-color: #f1f1f1;
+  border: 1px solid;
+  padding: 10px 12px;
+  &::after{
+    content: none;
+  }
+}
+
+.must{
+  .smf-item__label__text{
+    &::after{
+      content: "必須";
+      display: inline-block;
+      background: #a3373c;
+      color: white;
+      font-size: .75em;
+      padding: 1px 6px;
+      vertical-align: text-top;
+      margin-left: 8px;
+    }
+  }
+}
+
+
+.smf-form--simple-table+.smf-action{
+  @include sp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+.smf-action .smf-button-control+.smf-button-control{
+  @include sp{
+    margin-left: 0;
+    margin-top: 4%;
+  }
+}

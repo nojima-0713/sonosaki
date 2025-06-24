@@ -1,0 +1,59 @@
+// main: ../style.scss
+@use '../mixin/mixin' as *;
+
+/*
+ * パンくずリスト
+ */
+.breadcrumb-area{
+  margin-top: 78px;
+  width: 100%;
+  font-size: 14px;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  line-height: 1;
+  padding-left: 3%;
+  background-color: $main-color;
+  color: white;
+  i{
+    vertical-align: bottom;
+  }
+  span{
+    a{
+      @include animation;
+      transition-duration: .2s;
+      transition-property: color;
+      &:hover{
+        color: #b1c9e3;
+      }
+    }
+  }
+  @include sp{
+    padding: 3%;
+    margin-top: 68px;
+  }
+}
+
+.arrow{
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+}
+
+.arrow::before{
+  content: '';
+  width: 6px;
+  height: 6px;
+  border: 0px;
+  border-top: solid 1px $font-color;
+  border-right: solid 1px $font-color;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  margin-top: -8.5px;
+}
+

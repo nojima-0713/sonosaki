@@ -1,0 +1,200 @@
+//compileNested: ../css/$1.css
+@charset "UTF-8";
+
+@use '../mixin/mixin' as *;
+
+@use '../page-base.scss';
+
+.main-tit-block{
+  padding-top: calc(78px + 1%);
+  padding-bottom: 6%;
+  background-image: url("../../images/top-back.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  position: relative;
+  .main-tit{
+    color: white;
+  }
+  @include tab{
+    padding: 66px 0 13%;
+  }
+  @include sp{
+    padding: 53px 0 11%;
+    .main-tit {
+      padding: 0 0 12px;
+      h2{
+        font-size: 3em;
+      }
+    }
+  }
+}
+
+
+#history{
+  padding-bottom: 7%;
+  background: rgb(220,243,250);
+  background:linear-gradient(214deg, rgb(220, 243, 250) 0%, rgb(255, 255, 255) 32%, rgb(220, 243, 250) 72%, rgb(255, 255, 255) 90%);
+  @include sp{
+    padding-bottom: 17%;
+  }
+}
+
+.history-columns{
+  max-width: 1150px;
+  margin: 0 auto;
+  padding-top: 9%;
+  width: 90%;
+  @include sp{
+    padding-top: 14%;
+  }
+  &-box{
+    margin-bottom: 12%;
+    @include sp{
+      margin-bottom: 15%;
+    }
+    &-image{
+      width: 75%;
+      margin: 0 auto;
+      max-width: 800px;
+      margin-top: 5%;
+      margin-bottom: 5%;
+      @include sp{
+        width: 96%;
+        margin-top: 9%;
+        margin-bottom: 9%;
+      }
+      img{
+        width: 100%;
+      }
+      figure{
+        text-align: center;
+        figcaption{
+          color: rgb(101, 101, 101);
+          font-size: 16px;
+          margin-top: 1%;
+          @include sp{
+            font-size: 13px;
+          }
+        }
+      }
+    }
+    &-image-flex{
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-around;
+      width: 100%;
+      max-width: none;
+      .img1{
+        width: 33%;
+      }
+      .img2{
+        width: 57%;
+      }
+      @include sp{
+        flex-direction: column;
+        align-items: center;
+        .img1{
+          width: 82%;
+          margin-bottom: 4%;
+        }
+        .img2{
+          width: 90%;
+        }
+      }
+    }
+  }
+
+  &-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include sp{
+      flex-direction: column;
+    }
+    .history-columns-text{
+      width: 50%;
+      .top-tit{
+        margin-bottom: 8%;
+      }
+      @include tab{
+        width: 56%;
+      }
+    }
+
+    .history-columns-box-image{
+      width: 38%;
+      margin: 0;
+      figure{
+        margin-bottom: 10%;
+      }
+      img{
+        width: 100%;
+      }
+      .img5{
+        width: 88%;
+      }
+      @include sp{
+        width: 76%;
+        margin-top: 10%;
+      }
+    }
+  }
+
+  .history-columns-text{
+    @include sp{
+      width: 100%;
+    }
+    .top-tit{
+      display: inline-block;
+      margin-bottom: 4%;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: $main-color;
+      line-height: 1.2;
+      position: relative;
+      &::after{
+        content: "";
+        display: block;
+        width: 120%;
+        height: 3px;
+        background-color: #004098;
+        position: absolute;
+        bottom: -9px;
+        left: 0px;
+        @include sp{
+          width: 100%;
+        }
+      }
+      @include sp{
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 7%;
+        width: 95%;
+        p{
+          line-height: 1.5;
+          font-size: 1.2em;
+        }
+      }
+    }
+    .text{
+      line-height: 2;
+      text-align: justify;
+      margin-bottom: 3%;
+      @include sp{
+        vertical-align: bottom;
+        width: 95%;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .history-columns-flex{
+    .history-columns-text{
+      .top-tit{
+        margin-bottom: 8%;
+      }
+    }
+  }
+
+}

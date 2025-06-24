@@ -1,0 +1,174 @@
+// main: ../single.scss
+@use '../mixin/mixin' as *;
+
+aside#sidebar{
+  margin-top: 5%;
+  width: 27%;
+  font-size: 16px;
+  @include tab{
+    width: 100%;
+  }
+  @include sp{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 9%;
+  }
+}
+
+.sidebar-wrapper{
+  margin-bottom: 20%;
+  background-color: white;
+  @include tab{
+    margin-bottom: 6%;
+  }
+}
+
+.sidebar-title{
+  color: white;
+  padding: 3px 10px;
+  position: relative;
+  margin: auto;
+  background-color: $main-color;
+}
+
+//カレンダー
+
+.calender-wrapper{
+  margin-bottom: 10%;
+  background-color: white;
+  @include tab{
+    margin-bottom: 2%;
+  }
+  @include sp{
+    margin-bottom: 5%;
+  }
+}
+
+.calender-block{
+  max-width: 245px;
+  margin: 0 auto;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  @include tab{
+    max-width: 450px;
+    margin: 0 auto;
+    width: 90%;
+  }
+}
+
+.wp-calendar-table{
+  width: 100%;
+  font-size: 15px;
+
+  caption{
+    margin-bottom: 7px;
+  }
+
+  thead{
+    border-bottom: 1px solid;
+    th{
+      display: block;
+      margin-bottom: 7px;
+      width: calc(100% / 7);
+      text-align: center;
+    }
+  }
+
+  tbody{
+    tr{
+      padding-bottom: 10px;
+      &:first-of-type{
+        justify-content: flex-end;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  tr{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    td{
+      text-align: center;
+      width: calc(100% / 7);
+      a{
+        color: white;
+        background: $main-color;
+        display: inline-block;
+        padding: 2px 4px;
+        transition: .3s ease;
+        &:hover{
+          opacity: .8;
+        }
+      }
+    }
+  }
+
+  .sat{
+    color: #205dc5;
+  }
+
+  .sun{
+    color: rgb(224, 53, 53);
+  }
+}
+
+.wp-calendar-nav{
+  font-size: 15px;
+  a{
+    @include animation;
+    transition-duration: .2s;
+    transition-property: color;
+    &:hover{
+      color: $main-color;
+    }
+  }
+}
+
+
+//月別アーカイブ
+.year-archive-inner{
+  position: relative;
+  overflow: hidden;
+}
+
+//最新の投稿
+
+ul.side-item-list{
+  padding-top: 12px;
+  max-width: 328px;
+  margin: 0 auto;
+  padding-bottom: 4%;
+  li{
+    padding-left: 6px;
+    a{
+      @include animation;
+      transition-duration: .2s;
+      transition-property: color;
+      position: relative;
+      padding: 4px 0 2px 13px;
+      display: block;
+      &:hover{
+        color: $main-color;
+      }
+      &::before{
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 0;
+        border: solid 6px transparent;
+        border-left: solid 8px #80A1D0;
+        top: 33%;
+        left: 0;
+      }
+    }
+  }
+  @include tab{
+    max-width: 624px;
+    margin: 0 auto;
+  }
+  @include sp{
+    width: 100%;
+    padding: 4% 2%;
+  }
+}

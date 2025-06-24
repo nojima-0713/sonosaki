@@ -1,0 +1,382 @@
+@charset "UTF-8";
+/*
+ * 変数
+ */
+/*
+ * ブレークポイント
+ */
+/*
+ * 560pxより広くなったら改行なくす
+ */
+@media (min-width: 560px) {
+  .br_sp {
+    display: none;
+  }
+}
+
+/*
+ * 560pxより狭くなったら改行なくす
+ */
+@media (max-width: 560px) {
+  .sp_br {
+    display: none;
+  }
+}
+
+/*
+ * 780pxより広くなったら改行なくす
+ */
+@media (min-width: 900px) {
+  .br_tab {
+    display: none;
+  }
+}
+
+/*
+ * 780pxより狭くなったら改行なくす
+ */
+@media (max-width: 900px) {
+  .pc_br {
+    display: none;
+  }
+}
+
+/*
+ * トランジション
+ */
+#supporter {
+  margin-bottom: 11%;
+}
+
+/*後援会フォーム*/
+.sp-top-block {
+  position: relative;
+  width: 100%;
+  margin-top: 0;
+  text-align: center;
+  background-color: #004098;
+  padding: 6% 0;
+}
+
+.main-tit {
+  color: white;
+}
+@media (max-width: 560px) {
+  .main-tit h2 {
+    font-size: 2.5em;
+  }
+}
+
+.sp-at {
+  text-align: justify;
+  width: 95%;
+  margin: 0 auto;
+  max-width: 926px;
+  padding: 2em 3em;
+  background: #F5FAFF;
+  margin-top: 3%;
+  margin-bottom: 6%;
+}
+@media (max-width: 560px) {
+  .sp-at {
+    padding: 2em 1.6em;
+    margin-top: 6%;
+    margin-bottom: 10%;
+    font-size: 15px;
+  }
+}
+
+.con-top-p {
+  color: white;
+  width: 90%;
+  margin: 0 auto;
+  padding: 3% 0;
+}
+
+.smf-form--simple-table .smf-item {
+  display: flex;
+  padding: 0;
+}
+@media (max-width: 560px) {
+  .smf-form--simple-table .smf-item {
+    flex-direction: column;
+  }
+}
+
+.smf-form--simple-table .sptitle-wrapp {
+  margin: 0 auto;
+  border-left: 8px solid #004098;
+  padding: 7px 0;
+  margin-bottom: 3%;
+}
+.smf-form--simple-table .sptitle-wrapp .smf-item__col {
+  font-weight: bold;
+  font-size: 1.2em;
+  display: inline-block;
+  padding-left: 20px;
+}
+.smf-form--simple-table .mailform-table-wrap {
+  margin-bottom: 8%;
+}
+.smf-form--simple-table .formtitle {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  display: inline-block;
+  padding-left: 20px;
+}
+.smf-form--simple-table .formtitle p {
+  display: inline-block;
+}
+.smf-form--simple-table .form-sub-text {
+  margin: 0 auto;
+  width: 100%;
+  padding: 3%;
+  background: #F5FAFF;
+  margin-top: 2%;
+}
+.smf-form--simple-table .form-sub-text strong {
+  display: inline-block;
+  font-weight: bold;
+  color: #4245a4;
+}
+@media (max-width: 560px) {
+  .smf-form--simple-table .form-sub-text {
+    padding: 4% 3%;
+    margin-top: 4%;
+  }
+}
+.smf-form--simple-table .in-form-title {
+  text-align: center;
+  margin-top: 8%;
+}
+.smf-form--simple-table .in-form-title span {
+  background: #ccc;
+  color: #fff;
+  padding: 2px 10px;
+  vertical-align: text-bottom;
+  font-size: 0.8em;
+  margin-right: 6px;
+}
+.smf-form--simple-table .formtitle-sub {
+  margin-top: 10%;
+}
+@media (max-width: 560px) {
+  .smf-form--simple-table .formtitle-sub {
+    margin-top: 12%;
+  }
+}
+
+/*リキャプチャの説明*/
+.recaptcha_policy {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 3%;
+}
+.recaptcha_policy a {
+  color: #5f71b4;
+}
+.recaptcha_policy a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 560px) {
+  .recaptcha_policy {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 25%;
+  }
+}
+
+.snow-monkey-form {
+  margin-top: 7%;
+}
+
+.smf-form--simple-table {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 2% 0 1%;
+  margin-bottom: 3%;
+}
+
+.smf-complete-content {
+  text-align: center;
+}
+
+.smf-form--simple-table .in-form-title {
+  text-align: center;
+  margin: 9% 0 3%;
+  padding: 1% 0;
+}
+.smf-form--simple-table .in-form-title .no-must::after {
+  content: "任意";
+  display: inline-block;
+  background: #cacaca;
+  color: white;
+  font-size: 0.75em;
+  padding: 1px 6px;
+  vertical-align: text-top;
+  margin-left: 8px;
+}
+@media (max-width: 560px) {
+  .smf-form--simple-table .in-form-title {
+    margin: 13% 0 6%;
+    padding: 3% 0px;
+  }
+}
+
+.last-column .smf-placeholder {
+  border-bottom: 1px solid #e4e4e4;
+}
+@media (max-width: 560px) {
+  .last-column .smf-placeholder {
+    border-bottom: 1px solid #004098;
+  }
+}
+.last-column .smf-item__col--label {
+  border-bottom: 1px solid #004098;
+}
+@media (max-width: 560px) {
+  .last-column .smf-item__col--label {
+    border-bottom: none;
+  }
+}
+
+.smf-placeholder {
+  padding: 2rem 0 2rem 1rem;
+  border-top: 1px solid #e4e4e4;
+}
+@media (max-width: 560px) {
+  .smf-placeholder {
+    padding: 0rem 0 2rem;
+    border-top: none;
+    text-align: center;
+  }
+}
+
+.smf-form--simple-table .smf-item__col--label {
+  flex: auto;
+  max-width: 36%;
+  padding: 2rem 0 2rem 1rem;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #004098;
+  font-weight: bold;
+}
+@media (max-width: 560px) {
+  .smf-form--simple-table .smf-item__col--label {
+    max-width: 101%;
+    padding: 1rem 0 1rem 1rem;
+    border-right: none;
+  }
+}
+
+.smf-form .smf-item .smf-text-control__control {
+  width: 98%;
+  border: none;
+  background: #e4e9ee;
+  padding: 21px 9px;
+  height: 22px;
+  box-sizing: border-box;
+  border: 2px solid #e4e9ee;
+  box-shadow: none;
+  font-size: inherit;
+  font-weight: normal;
+  font-family: inherit;
+  border-radius: 0;
+}
+@media (max-width: 900px) {
+  .smf-form .smf-item .smf-text-control__control {
+    height: 21px;
+  }
+}
+@media (max-width: 560px) {
+  .smf-form .smf-item .smf-text-control__control {
+    width: 94%;
+  }
+}
+
+.smf-action .smf-button-control__control {
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+  color: #fff;
+  border-style: none;
+  background-color: #004098;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  box-sizing: border-box;
+  width: auto;
+  font-size: 1em;
+  border: none;
+  border-radius: 0;
+  padding: 18px 6em;
+  transition: 0.2s ease;
+}
+@media (max-width: 560px) {
+  .smf-action .smf-button-control__control {
+    padding: 18px 5em;
+  }
+}
+
+.smf-action .smf-button-control__control:hover {
+  background-color: #002b67;
+  color: white;
+}
+
+.smf-form .smf-item .smf-text-control__control:active, .smf-form .smf-item .smf-text-control__control:focus, .smf-form .smf-item .smf-text-control__control:focus-within, .smf-form .smf-item .smf-text-control__control[aria-selected=true] {
+  border: 2px solid #004098;
+  background-color: #004098;
+  color: white;
+}
+
+.smf-form .smf-item .smf-text-control__control:focus {
+  border: 2px solid #004098;
+  background-color: white;
+  color: #333;
+}
+
+.smf-form .smf-item .smf-text-control__control:hover {
+  border-color: #004098;
+}
+
+.smf-action .smf-button-control__control[data-action=back] {
+  display: inline-block;
+  color: #717171;
+  background-color: #f1f1f1;
+  border: 1px solid;
+  padding: 10px 12px;
+}
+.smf-action .smf-button-control__control[data-action=back]::after {
+  content: none;
+}
+
+.must .smf-item__label__text::after {
+  content: "必須";
+  display: inline-block;
+  background: #a3373c;
+  color: white;
+  font-size: 0.75em;
+  padding: 1px 6px;
+  vertical-align: text-top;
+  margin-left: 8px;
+}
+
+@media (max-width: 560px) {
+  .smf-form--simple-table + .smf-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .smf-action .smf-button-control + .smf-button-control {
+    margin-left: 0;
+    margin-top: 4%;
+  }
+}
+
+/*# sourceMappingURL=supporter.css.map */
