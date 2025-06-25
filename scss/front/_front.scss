@@ -1,0 +1,212 @@
+// main: ../frontpage.scss
+
+@use '../mixin/mixin' as *;
+
+main{
+  background-color: aliceblue;
+}
+
+.main-top{
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  max-height: 856px;
+  overflow: hidden;
+  background-image: url("../images/top-back.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom 14%;
+  margin-top: 78px;
+  &-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1223px;
+    padding: 10% 0px 6%;
+    position: relative;
+  }
+  @include tab{
+    &-inner{
+      width: 95%;
+    }
+  }
+  @include sp{
+    max-height: 485px;
+    margin-top: 62px;
+    &-inner{
+      display: inline-block;
+      p{
+        margin-bottom: 6px;
+        margin-left: 7px;
+      }
+    }
+  }
+}
+
+.main-top-back{
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+  height: 100%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  max-height: 713px;
+  padding-top: 75px;
+  background: #0060B0;
+  background: linear-gradient(236deg, rgba(0, 96, 176, 1) 0%, rgba(0, 64, 152, 1) 56%, rgba(0, 55, 126, 1) 100%);
+  clip-path: polygon(0 61%, 100% 94%, 100% 100%, 0% 100%);
+}
+
+.jimin-logo{
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  width: 20%;
+  max-width: 100px;
+  @include sp{
+    top: 2%;
+    left: 3%;
+    width: 20%;
+  }
+}
+
+.main-top-inner-column-1{
+  width: 51%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @include sp{
+    position: absolute;
+    padding-bottom: 0;
+    top: 23%;
+    left: 2%;
+    z-index: 1;
+  }
+  picture{
+    width: 114%;
+    z-index: 2;
+    margin-left: -8%;
+    &:first-child{
+      margin-bottom: -9%;
+      width: 125%;
+      margin-left: -9%;
+      margin-top: -10%;
+      transform: rotate(2deg);
+    }
+    img{
+      width: 100%;
+    }
+    @include sp{
+      &:first-child{
+        margin-left: 1%;
+        margin-top: -24%;
+        margin-bottom: 2%;
+        width: 120%;
+      }
+      &:last-child{
+        width: 177%;
+        align-self: flex-start;
+      }
+    }
+  }
+}
+
+.main-top-inner-column-2{
+  width: 49%;
+  picture,img{
+    width: 100%;
+  }
+  @include sp{
+    width: 95%;
+    img{
+      margin-left: 28%;
+      margin-top: 0%;
+    }
+  }
+}
+
+
+
+
+/*
+ * メイン
+ */
+
+.main-column{
+  @include sp{
+    margin: 13% 0;
+  }
+}
+
+.main-column-block{
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.current-tit{
+  color: white;
+  background-color: $main-color;
+  h2{
+    font-size: 1em;
+    font-weight: bold;
+    font-style: normal;
+  }
+
+}
+
+.currenttrend{
+  margin-top: 5%;
+  margin-bottom: 5%;
+  ul{
+    border: 1px solid;
+    margin-top: 2%;
+    padding: 3% 5%;
+    overflow-y: scroll;
+    height: 333px;
+  }
+  li{
+    margin-bottom: 2%;
+    .content_date{
+      display: block;
+      text-align: center;
+      font-weight: bold;
+      color: $main-color;
+      font-size: 1.55em;
+      margin-bottom: 2%;
+    }
+  }
+  li + li{
+    border-top: 1px solid $main-color;
+    padding-top: 2%;
+  }
+}
+
+
+/*工事中*/
+.content{
+  text-align: center;
+  height: 100vh;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20%;
+  h2{
+    color: #1a54c2;
+  }
+  img{
+    max-width: 195px;
+    margin-bottom: 16px;
+  }
+}
+
+#map{
+  height: 450px;
+  @include tab{
+    height: 350px;
+  }
+}

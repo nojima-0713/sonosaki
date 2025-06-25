@@ -1,0 +1,234 @@
+// main: ../frontpage.scss
+
+@use '../mixin/mixin' as *;
+
+.sns{
+  position: relative;
+  padding-top: 2%;
+  overflow: hidden;
+  margin-bottom: 3%;
+  @include sp{
+    margin-top: 0;
+  }
+  &-wrapp{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 95%;
+    margin: 0 auto;
+    max-width: 1400px;
+    padding: 1% 0 5%;
+    position: relative;
+    @include sp{
+      padding: 0% 0 13%;
+    }
+  }
+
+  .sns-btn-block{
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include sp{
+      flex-direction: column;
+    }
+    a{
+      @include button;
+      width: 29%;
+      max-width: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9em 0;
+      font-size: 1.5em;
+      color: $main-color;
+      margin: 0 2%;
+      margin-bottom: 4%;
+      transition-property: box-shadow,transform,opacity;
+      &:hover{
+        i{
+          &::before{
+            transform: none;
+          }
+        }
+      }
+      span{
+        color: white;
+      }
+      i{
+        font-size: 1.5em;
+        color: white;
+        margin-right: 7px;
+        line-height: 1;
+      }
+      @include tab{
+        width: 91%;
+      }
+      @include sp{
+        width: 82%;
+        padding: 0.6em 0;
+        margin: 4% 0;
+      }
+    }
+
+    .fbbuner{
+      background-color: #1877f2;
+    }
+    .inbuner{
+      background: linear-gradient(127deg, #6666ff, #b655e2, #f53d59, #f87c71, #ffc443);
+    }
+    .ytbuner{
+      background-color: #FF0000;
+    }
+    .xbuner{
+      background-color: #000000;
+    }
+  }
+
+}
+
+.gr-block{
+  margin-bottom: 4%;
+  .tit{
+    font-size: 1.3em;
+    position: relative;
+    color: $main-color;
+    font-style: italic;
+    margin-bottom: 2%;
+    @include sp{
+      font-size: 1.5em;
+    }
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      display: inline-block;
+      width: 93px;
+      height: 1px;
+      background-color: $main-color;
+    }        
+    &:before {
+      left: 27px;
+    }
+    &:after {
+      right: 27px;
+    }
+  }
+}
+
+.gr-block{
+  width: 90%;
+  position: relative;
+  @include sp{
+    margin-top: 6%;
+  }
+  p{
+    position: absolute;
+    display: inline-block;
+    bottom: 50%;
+    margin: auto;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    width: 90%;
+    @include sp{
+      bottom: 29%;
+    }
+  }
+}
+
+#gallery{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  width: 100%;
+  .gallery-item{
+    width: 15%;
+    aspect-ratio: 1;
+    height: auto;
+    text-align: center;
+    margin: 2px;
+    @include sp{
+      width: 45%;
+    }
+  }
+  a{
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    svg{
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      z-index: 1;
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity .5s ease-in-out;
+    }
+    &:hover{
+      img{
+        transform: scale(1.1);
+      }
+      &::after{
+        opacity: 1;
+      }
+    }
+  }
+  img{
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    width: 100%;
+    @include animation;
+  }
+  video{
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+  }
+}
+
+.sp-gr-item{
+  @include sp{
+    display: none;
+  }
+}
+
+.insta_btn{
+  background-color: $font-color;
+  padding: .5em 3em;
+  width: fit-content;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: .3s;
+  margin-top: 4%;
+  @include sp{
+    padding: 0.6em 4em;
+  }
+}
+
+.insta_btn a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.insta_btn:hover{
+  background-color: $main-color;
+}

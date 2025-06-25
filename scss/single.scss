@@ -1,0 +1,6 @@
+//compileNested: ../css/$1.css
+@use './mixin/mixin';
+@use './page/single.scss';
+@use './module/sidebar.scss';
+@use './module/pager.scss';
+@use './page-base.scss';

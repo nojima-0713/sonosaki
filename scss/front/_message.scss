@@ -1,0 +1,114 @@
+// main: ../frontpage.scss
+@use '../mixin/mixin' as *;
+
+#message{
+  .main-tit{
+    margin-bottom: 1%;
+    margin-top: 3%;
+    @include sp{
+      margin-bottom: 8%;
+    }
+  }
+}
+
+.message{
+  padding: 1% 0 2%;
+  margin: 0;
+  position: relative;
+  
+  background-color: $sub-color;
+      background-image: url(../images/me-back.jpg);
+    background-size: cover;
+  margin-bottom: 6%;
+
+  &-tit{
+    margin-bottom: 2%;
+    @include tab{
+      margin-bottom: 6%;
+    }
+    @include sp{
+      margin-bottom: 4%;
+    }
+  }
+
+  &-columns{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 4% 2% 5%;
+    position: relative;
+
+    @include sp{
+      padding: 2% 5% 5%;
+    }
+  }
+
+  &-text{
+    line-height: 2.6em; 
+    .ms-st{
+      font-weight: bold;
+      color: #001976;
+      font-size: 1.2em;
+    }
+    @include sp{
+      text-align: center;
+      font-size: 0;
+      p{
+        display: inline-block;
+        margin: 0px 0px;
+        font-size: 16px;
+        line-height: 2.7em;
+        @include sp{
+          line-height: 2.2em;
+        }
+      }
+    }
+  }
+  .ms-name{
+    max-width: 150px;
+    margin-top: 7%;
+    @include sp{
+      margin-top: 10%;
+    }
+  }
+
+  .ms-p-image{
+    position: absolute;
+    right: 18%;
+    bottom: -26%;
+    max-width: 175px;
+    @include tab{
+      right: 11%;
+      bottom: -23%;
+      max-width: 158px;
+    }
+    @include sp{
+      max-width: 126px;
+      position: initial;
+      right: 0;
+      left: 0;
+      margin: 0 auto;
+      text-align: center;
+      display: block;
+      margin-bottom: -69%;
+    }
+  }
+}
+
+.ms-image{
+  margin-top: -2%;
+  img{
+    width: 100%;
+  }
+  @include sp{
+    img{
+      width: 102%;
+      margin-left: -2%;
+    }
+  }
+}
+
+
+
+
+

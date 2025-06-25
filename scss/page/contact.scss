@@ -1,0 +1,36 @@
+//compileNested: ../css/$1.css
+@charset "UTF-8";
+@use '../mixin/mixin' as *;
+
+  .contact-columns{
+    margin-bottom: 11%;
+  }
+
+  .mailform-table{
+    margin-top: 5%;
+  }
+
+  .mailform-column{
+    .form-tit{
+      width: 31%;
+      @include tab{
+        width: 100%;
+      }
+    }
+    .form-input{
+      width: 69%;
+      @include tab{
+        width: 100%;
+      }
+    }
+    &::before{
+      width: 27%;
+    }
+    @include sp{
+      margin-bottom: 10%;
+      padding-top: 6%;
+      &:last-of-type{
+        padding-bottom: 9%;
+      }
+    }
+  }
