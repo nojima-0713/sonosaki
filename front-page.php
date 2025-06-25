@@ -9,25 +9,23 @@
     <img src="<?php echo get_template_directory_uri(); ?>/images/jimin-logo.png" alt="" class="jimin-logo">
       <div class="main-top-inner-column-1">
         <picture>
-          <img src="<?php echo get_template_directory_uri(); ?>/images/top-catch.png" alt="" class="top-catch">
+          <source media="(max-width: 560px)" srcset="<?php echo get_template_directory_uri(); ?>/images/top-catch-sp.png" alt="" class="top-catch" alt="京都南部から閉塞感を打ち破る！"> 
+          <source media="(min-width: 561px)" srcset="<?php echo get_template_directory_uri(); ?>/images/top-catch.png" alt="" class="top-catch" alt="京都南部から閉塞感を打ち破る！">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/top-catch.png" alt="" class="top-catch" alt="京都南部から閉塞感を打ち破る！">
         </picture>
         <picture>
-          <source media="(max-width: 560px)" srcset="<?php echo get_template_directory_uri(); ?>/images/top-name-5-sp.svg" alt="京都府第六選挙区支部長 そのさき弘道（園崎ひろみち） トップ名前画像"> 
-          <source media="(min-width: 561px)" srcset="<?php echo get_template_directory_uri(); ?>/images/top-name-5.svg" alt="京都府第六選挙区支部長 そのさき弘道（園崎ひろみち） トップ名前画像">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/top-name-5.svg" alt="京都府第六選挙区支部長 そのさき弘道（園崎ひろみち） トップ名前画像">
+          <source media="(max-width: 560px)" srcset="<?php echo get_template_directory_uri(); ?>/images/top-name-sp.png" alt="衆議院京都府第六選挙区支部長 そのさき弘道（園崎ひろみち） トップ名前画像"> 
+          <source media="(min-width: 561px)" srcset="<?php echo get_template_directory_uri(); ?>/images/top-name.png" alt="衆議院京都府第六選挙区支部長 そのさき弘道（園崎ひろみち） トップ名前画像">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/top-name.png" alt="衆議院京都府第六選挙区支部長 そのさき弘道（園崎ひろみち） トップ名前画像">
         </picture>
       </div>
 
-      <div class="main-top-inner-column-2">
-        <picture>
-          <source media="(max-width: 560px)" srcset="<?php echo get_template_directory_uri(); ?>/images/top-image-sp.png" alt="京都府第六選挙区支部長 そのさき弘道（園崎ひろみち） イメージ写真"> 
-          <source media="(min-width: 561px)" srcset="<?php echo get_template_directory_uri(); ?>/images/top-image.png" alt="京都府第六選挙区支部長 そのさき弘道（園崎ひろみち） イメージ写真">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/top-image.png" alt="京都府第六選挙区支部長 そのさき弘道（園崎ひろみち） イメージ写真">
-        </picture>
-      </div>
     </div>
+    <div class="main-top-back">
 
+    </div>
   </div>
+
 
   <div class="main-wrapper">
 
@@ -44,26 +42,23 @@
   <?php if ($wp_query->have_posts()): ?>
 
   <div class="main-column-block currenttrend" id="currenttrend">
-            
-    
+    <div class="current-wrapp">
+      <div class="main-tit current-tit">
+        <h2 class="main-tit-p">そのさき弘道　「今日の動向」</h2>
+      </div>
+      <ul class="postlists">
+      <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+        <li class="postlists_item">
+          <span class="content_date"><?php the_title(); ?></span>
+          <?php the_content(); ?>
+        </li>    
+      <?php endwhile; ?>
+      </ul>
+    </div>
+  </div>
+  <?php else: ?>
 
-            <div class="current-wrapp">
-    <div class="main-tit current-tit">
-      <h2 class="main-tit-p">そのさき弘道　「今日の動向」</h2>
-    </div>
-    <ul class="postlists">
-    <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
-  <li class="postlists_item">
-        <span class="content_date"><?php the_title(); ?></span>
-        <?php the_content(); ?>
-  </li>    
-    <?php endwhile; ?>
-    </ul>
-    </div>
-    </div>
-    <?php else: ?>
-
-    <?php endif; ?>
+  <?php endif; ?>
 
 
 
@@ -107,6 +102,29 @@
 
     </div>
 
+    <div class="main-column message" id="message">
+
+      <div class="main-tit-block">
+        <div class="main-tit">
+          <h2>MESSAGE</h2>
+          <span>ご挨拶</span>
+        </div>
+      </div>
+      
+      <div class="message-columns">
+        <div class="message-text">
+          <p>私たちにとって、今の日本は本当に生きやすい社会でしょうか？<br
+>人口減少・少子高齢化、高騰する物の値段に所得が追いついていかない、格差と貧困の連鎖。<br
+>ネットを中心とした誹謗中傷。自殺による死亡率は先進国の中で一番多い……。<br
+>日本に覆われているこのような閉塞感を打破することこそが、最大の政治課題であると考えます。<br
+>時代の変革期において、私たちの豊かな国「日本」を取り戻すために、<br
+>覆われたこの閉塞感を打ち破るために、<br
+>そのさき弘道は京都南部から取り組みを進めます。</p>
+        </div>
+      </div>
+
+    </div>
+
 
   <div class="main-column policy" id="policy">
 
@@ -138,7 +156,7 @@
     </div>
 
     <div class="policy-top sa sa--up">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/pol-top.svg" alt="そのさき弘道　5つのチャレンジ">
+      <img src="<?php echo get_template_directory_uri(); ?>/images/pol-top.png" alt="そのさき弘道　5つのビジョン">
     </div>
 
     <div class="policy-inner">
@@ -152,10 +170,10 @@
               <span class="pol-tit-num">
                 01
               </span>
-              <p>安全保障</p>
+              <p>安全保障、<br>経済・食料安全保障</p>
             </div>
             <div class="pol-text">
-              <p>命と財産を<br class="sp_br">守るための<br class="sp_br">強靱な国づくり</p>
+              <p>国民の命と平和、<br class="sp_br">日本を護る！</p>
               <div class="pol-about">
                 <a href="<?php echo esc_url( home_url('/policy') ); ?>#pol-1">
                   <span>詳しく見る</span><i class="ri-arrow-right-s-line"></i>
@@ -178,7 +196,7 @@
               <p>インフラ･投資</p>
             </div>
             <div class="pol-text">
-              <p>京都南部から<br class="sp_br">日本を元気に！</p>
+              <p>京都南部から<br class="sp_br">日本が動き出す！</p>
               <div class="pol-about">
                 <a href="<?php echo esc_url( home_url('/policy') ); ?>#pol-2">
                   <span>詳しく見る</span><i class="ri-arrow-right-s-line"></i>
@@ -198,10 +216,10 @@
               <span class="pol-tit-num">
                 03
               </span>
-              <p>地域づくり・<br>地域内循環</p>
+              <p>社会保障・福祉</p>
             </div>
             <div class="pol-text">
-              <p>京都南部の未来創造</p>
+              <p>安心して暮らせる<br class="sp_br">地域社会の構築！</p>
               <div class="pol-about">
                 <a href="<?php echo esc_url( home_url('/policy') ); ?>#pol-3">
                   <span>詳しく見る</span><i class="ri-arrow-right-s-line"></i>
@@ -221,10 +239,10 @@
               <span class="pol-tit-num">
                 04
               </span>
-              <p>社会保障・福祉</p>
+              <p>夢づくり･教育</p>
             </div>
             <div class="pol-text">
-              <p>安心して暮らせる<br class="sp_br">地域社会の<br class="sp_br">構築！</p>
+              <p>豊かな心の醸成、<br class="sp_br">夢と希望にあふれる人づくり</p>
               <div class="pol-about">
                 <a href="<?php echo esc_url( home_url('/policy') ); ?>#pol-4">
                   <span>詳しく見る</span><i class="ri-arrow-right-s-line"></i>
@@ -246,10 +264,10 @@
               <span class="pol-tit-num">
                 05
               </span>
-              <p>夢づくり･教育</p>
+              <p>地域づくり・<br>地域内循環</p>
             </div>
             <div class="pol-text">
-              <p>豊かな心の醸成、<br class="sp_br">夢と希望に<br class="sp_br">あふれる人づくり</p>
+              <p>京都南部の未来創造<br class="sp_br"> ～その先に広がる未来へ～</p>
               <div class="pol-about">
                 <a href="<?php echo esc_url( home_url('/policy') ); ?>#pol-5">
                   <span>詳しく見る</span><i class="ri-arrow-right-s-line"></i>
@@ -291,50 +309,75 @@
               <p>昭和55年3月23日 石川県生まれ</p>
             </div>
             <div class="p-t-flex">
-              <span>平成10年3月</span>
-              <p>私立三田学園高等学校（兵庫県）卒業</p>
+              <span>平成10年</span>
+              <p>三田学園高等学校（兵庫県）卒業</p>
             </div>
             <div class="p-t-flex">
-              <span>平成14年4月</span>
+              <span>平成14年</span>
               <p>神戸大学経営学部卒業</p>
             </div>
             <div class="p-t-flex">
-              <span>平成14年4月</span>
-              <p>カネボウ化粧品（京都支社・滋賀支社）</p>
+              <span>平成14年</span>
+              <p>カネボウ化粧品（京都支社）</p>
             </div>
             <div class="p-t-flex">
               <span>平成17年</span>
-              <p>選挙事務所スタッフ、家庭教師、<br>キャディ等を経験</p>
+              <p>選挙事務所スタッフ、家庭教師、<br>キャディ等</p>
             </div>
             <div class="p-t-flex">
-              <span>平成19年4月</span>
+              <span>平成19年</span>
               <p>城陽市議会議員（2期7年）</p>
             </div>
             <div class="p-t-flex">
-              <span>平成26年4月</span>
+              <span>平成26年</span>
               <p>京都府議会議員（4期10年）</p>
             </div>
             <div class="p-t-flex">
-              <span>平成28年11月〜</span>
+              <span>平成28年〜</span>
               <p>京都スポーツ・障がい者スポーツ推進協会 理事長</p>
             </div>
             <div class="p-t-flex">
-              <span>令和2年3月</span>
+              <span>令和2年</span>
               <p>大阪市立大学大学院都市経営研究科（修士）修了</p>
             </div>
             <div class="p-t-flex">
-              <span>令和5年6月〜</span>
+              <span>令和5年〜</span>
               <p>自民党京都府第六選挙区支部長 就任</p>
             </div>
             <div class="p-t-flex">
               <span>令和6年</span>
-              <p>京都大学公共政策大学院修了</p>
+              <p>京都大学公共政策大学院修了<br>衆議院議員選挙にて惜敗（65,152票）</p>
             </div>
+          </div>
+
+          <div class="profile-box">
+            <div class="profile-box-tit">
+              <p>元</p>
+            </div>
+            <p class="p-dot">全日本オセロ選手権 少年少女の部 2位（1993）</p>
+            <p class="p-dot">神戸大学混声合唱団エルデ学生指揮者（2000、2001）</p>
+            <p class="p-dot">城陽秋花火2016実行委員長（2016）</p>
+            <p class="p-dot">城陽青年会議所理事長（2016）</p>
+          </div>
+
+          <div class="profile-box">
+            <div class="profile-box-tit">
+              <p>現</p>
+            </div>
+            <p class="p-dot">京都ホッケー協会 顧問</p>
+            <p class="p-dot">NPO法人 京都スポーツ・障がい者スポーツ推進協会 理事長</p>
+            <p class="p-dot">城陽市空手道連盟 会長</p>
+            <p class="p-dot">消防団員（寺田分団）</p>
           </div>
 
         </div>
 
         <div class="profile-column image-column">
+          <figure>
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/prof-image.jpg" alt="そのさき弘道　プロフィール画像">
+  <figcaption>中学１年生の夏休み、国会議事堂前にて</figcaption>
+</figure>
+
           <img src="<?php echo get_template_directory_uri(); ?>/images/prof-image.png" alt="そのさき弘道　プロフィール画像">
         </div>
 

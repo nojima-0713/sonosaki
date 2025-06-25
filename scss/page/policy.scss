@@ -20,13 +20,14 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom right;
-
+  padding-top: 2%;
   &-inner{
     display: flex;
     align-items: flex-end;
-    width: 95%;
+    width: 100%;
     max-width: 1527px;
     margin: 0 auto;
+     position: relative;
     @include tab{
       width: 100%;
     }
@@ -36,12 +37,15 @@
     }
   }
   &-left{
-    width: 64%;
+    width: 57%;
     .policy-top-image{
       img{
-        width: 91%;
+        width: 100%;
+        margin-left: -4%;
+        margin-bottom: 3%;
         @include tab{
-          width: 100%;
+          margin-left: 0;
+          width: 118%;
         }
         @include sp{
           width: 85%;
@@ -61,7 +65,7 @@
     z-index: 1;
     margin-bottom: 4%;
     @include tab{
-      padding-left: 2%;
+      padding-left: 5%;
     }
     @include sp{
       flex-direction: column;
@@ -154,18 +158,37 @@
     }
   }
   &-right{
-    width: 28%;
+    width: 48%;
     z-index: 2;
+    margin-left: -10%;
+    @include tab{
+      width: 48%;
+      margin-left: -5%;
+    }
+    @include sp{
+      width: 73%;
+      align-self: end;
+      margin-top: -11%;
+      margin-right: -5%;
+    }
     img{
       width: 100%;
     }
-    @include tab{
-      width: 31%;
-    }
-    @include sp{
-      width: 58%;
-      align-self: end;
-      margin-top: -13%;
+    .pol-next{
+      position: absolute;
+      right: -2%;
+      width: 30%;
+      bottom: -1%;
+      @include tab{
+        right: 0%;
+        width: 34%;
+        bottom: 69%;
+      }
+      @include sp{
+        right: 44%;
+        width: 58%;
+        bottom: 0%;
+      }
     }
   }
 }
@@ -256,6 +279,7 @@
     @include sp{
       padding: 2% 0%;
       width: 96%;
+      left: 2%;
     }
     &::after{
       content: '';
@@ -283,7 +307,7 @@
       }
     }
     p{
-      font-size: 2em;
+      font-size: clamp(1.875rem, 1.648rem + 1.14vw, 2.5rem);
       font-weight: bold;
       margin-left: 3%;
     }
@@ -294,12 +318,15 @@
     &::after{
       content: '';
       background-color: $main-color;
-      width: 120%;
+      width: 124%;
       top: 0;
       bottom: 0;
       left: -50%;
       position: absolute;
       z-index: -1;
+      @include tab{
+        width: 135%;
+      }
       @include sp{
         left: -7%;
       }

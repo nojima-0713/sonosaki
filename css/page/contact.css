@@ -1,0 +1,84 @@
+@charset "UTF-8";
+/*
+ * 変数
+ */
+/*
+ * ブレークポイント
+ */
+/*
+ * 560pxより広くなったら改行なくす
+ */
+@media (min-width: 560px) {
+  .br_sp {
+    display: none;
+  }
+}
+
+/*
+ * 560pxより狭くなったら改行なくす
+ */
+@media (max-width: 560px) {
+  .sp_br {
+    display: none;
+  }
+}
+
+/*
+ * 780pxより広くなったら改行なくす
+ */
+@media (min-width: 900px) {
+  .br_tab {
+    display: none;
+  }
+}
+
+/*
+ * 780pxより狭くなったら改行なくす
+ */
+@media (max-width: 900px) {
+  .pc_br {
+    display: none;
+  }
+}
+
+/*
+ * トランジション
+ */
+.contact-columns {
+  margin-bottom: 11%;
+}
+
+.mailform-table {
+  margin-top: 5%;
+}
+
+.mailform-column .form-tit {
+  width: 31%;
+}
+@media (max-width: 900px) {
+  .mailform-column .form-tit {
+    width: 100%;
+  }
+}
+.mailform-column .form-input {
+  width: 69%;
+}
+@media (max-width: 900px) {
+  .mailform-column .form-input {
+    width: 100%;
+  }
+}
+.mailform-column::before {
+  width: 27%;
+}
+@media (max-width: 560px) {
+  .mailform-column {
+    margin-bottom: 10%;
+    padding-top: 6%;
+  }
+  .mailform-column:last-of-type {
+    padding-bottom: 9%;
+  }
+}
+
+/*# sourceMappingURL=contact.css.map */

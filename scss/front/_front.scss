@@ -10,12 +10,12 @@ main{
   width: 100%;
   margin: 0 auto;
   position: relative;
-  max-height: 713px;
+  max-height: 856px;
   overflow: hidden;
   background-image: url("../images/top-back.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center bottom 21%;
+  background-position: center bottom 14%;
   margin-top: 78px;
   &-inner{
     display: flex;
@@ -23,18 +23,33 @@ main{
     align-items: flex-start;
     width: 90%;
     margin: 0 auto;
-    max-width: 1035px;
-    padding: 3% 0px 0;
+    max-width: 1223px;
+    padding: 10% 0px 6%;
     position: relative;
+    @include sp{
+      padding: 15% 0px 2%;
+    }
+  }
+  @include pc-max{
+    max-height: 954px;
+  }
+  @include pc{
+    background-size: 132%;
+    background-repeat: no-repeat;
+    background-position: center bottom 23%;
   }
   @include tab{
     &-inner{
-      width: 95%;
+      width: 100%;
     }
   }
   @include sp{
-    max-height: 485px;
+    max-height: 602px;
     margin-top: 62px;
+    background-image: url("../images/top-back-sp.jpg");
+    background-position: left -48px bottom 13%;
+    background-size: 141%;
+    background-repeat: no-repeat;
     &-inner{
       display: inline-block;
       p{
@@ -43,6 +58,23 @@ main{
       }
     }
   }
+}
+
+.main-top-back{
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+  height: 100%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  max-height: 713px;
+  padding-top: 75px;
+  background: #0060B0;
+  background: linear-gradient(236deg, rgba(0, 96, 176, 1) 0%, rgba(0, 64, 152, 1) 56%, rgba(0, 55, 126, 1) 100%);
+  clip-path: polygon(0 61%, 100% 94%, 100% 100%, 0% 100%);
 }
 
 .jimin-logo{
@@ -64,44 +96,39 @@ main{
   flex-direction: column;
   align-items: flex-start;
   @include sp{
-    position: absolute;
+    width: 94%;
+    display: flex;
+    flex-direction: column;
     padding-bottom: 0;
-    top: 23%;
-    left: 2%;
-    z-index: 1;
+    margin: 0 auto;
   }
   picture{
     width: 114%;
     z-index: 2;
+    margin-left: -8%;
     &:first-child{
-      margin-bottom: -4%;
-      width: 80%;
-      margin-left: 7%;
-      margin-top: -1%;
-    }
-    &:last-child{
-      img{
-        filter: drop-shadow(3px 3px 3px rgba(255, 255, 255, 0.85)) drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.85)) drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.85)) drop-shadow(-4px -4px 3px rgba(255, 255, 255, 0.85)) drop-shadow(-3px -3px 3px rgba(255, 255, 255, 0.7));
-        margin-left: 11%;
-        @include sp{
-          filter: drop-shadow(1px 1px 2px rgba(255, 255, 255, 0.85)) drop-shadow(0px 0px 3px rgba(255, 255, 255, 0.85)) drop-shadow(1px 1px 2px rgba(255, 255, 255, 0.85)) drop-shadow(-3px -3px 3px rgba(255, 255, 255, 0.85)) drop-shadow(-1px -1px 2px rgba(255, 255, 255, 0.7));
-          margin-left: 3%;
-        }
-      }
+      margin-bottom: -9%;
+      width: 109%;
+      margin-left: -9%;
+      margin-top: -10%;
+      transform: rotate(2deg);
+      max-width: 748px;
     }
     img{
       width: 100%;
     }
     @include sp{
       &:first-child{
-        margin-left: 1%;
-        margin-top: -24%;
-        margin-bottom: 2%;
-        width: 120%;
+        margin-left: -3%;
+        margin-top: 0%;
+        margin-bottom: -8%;
+        width: 69%;
+        transform: none;
       }
       &:last-child{
-        width: 177%;
-        align-self: flex-start;
+        width: 100%;
+        align-self: center;
+        margin-left: 0;
       }
     }
   }

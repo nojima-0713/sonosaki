@@ -76,7 +76,7 @@ $(document).ready(function(){
       if ( scrollHeight - scrollPosition  <= footHeight ) { //ドキュメントの高さと現在地の差がfooterの高さ以下になったら
           $("#page-top").css({
               "position":"absolute", //pisitionをabsolute（親：wrapperからの絶対値）に変更
-              "bottom": footHeight,
+              "bottom": footHeight - 300,
               "opacity": "1"//下からfooterの高さ + 20px上げた位置に配置
           });
       } else { //それ以外の場合は
@@ -170,4 +170,12 @@ if (window.matchMedia && window.matchMedia('(max-device-width: 560px)').matches)
 
 $("#gallery").append(photos); 
 
+});
+
+
+$(document).ready(function() {
+  if ($(window).width() <= 560) {
+    $('.image-column').insertAfter('.profile-box-top');
+    $('.image-column figure').insertAfter('.p-c-text');
+  }
 });

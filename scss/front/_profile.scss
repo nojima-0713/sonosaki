@@ -50,11 +50,25 @@
     width: 90%;
     max-width: 218px;
   }
+  figure{
+    margin-bottom: 13%;
+    text-align: center;
+    figcaption{
+      font-size: .75em;
+    }
+  }
   @include sp{
     text-align: center;
     width: 50%;
     margin: 0 auto;
     margin-bottom: 10%;
+  }
+}
+
+.profile-box{
+  width: 80%;
+  @include sp{
+    width: 100%;
   }
 }
 
@@ -79,6 +93,36 @@
   }
 }
 
+.profile-box-tit{
+  background-color: #bbcce9;
+  padding: 0 5px;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  @include sp{
+    margin-bottom: 4%;
+    margin-top: 8%;
+  }
+  p{
+    color: $main-color;
+    font-weight: bold;
+  }
+}
+
+.p-dot{
+  position: relative;
+  padding-left: .6em;
+  text-indent: 0em;
+  &::before{
+    content: "・";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    color: $main-color;
+    font-weight: bold;
+  }
+}
 
 .p-t-flex{
   display: flex;
@@ -107,6 +151,21 @@
     text-align: justify;
     @include sp{
       width: 96%;
+    }
+  }
+}
+
+figure{
+  @include sp{
+    width: 61%;
+    margin: 0 auto;
+    margin-bottom: 10%;
+    margin-top: 5%;
+    img{
+      width: 100%;
+    }
+    figcaption{
+      font-size: .75em;
     }
   }
 }
