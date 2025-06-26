@@ -424,10 +424,10 @@ p.tit-p {
 .main-tit-block {
   padding-top: calc(78px + 1%);
   padding-bottom: 6%;
-  background-image: url("../images/top-back.jpg");
+  background-image: url("../images/me-back.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center bottom;
+  background-position: center bottom 16%;
   position: relative;
 }
 .main-tit-block .main-tit {

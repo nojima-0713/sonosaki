@@ -70,15 +70,36 @@ main {
   padding: 10% 0px 6%;
   position: relative;
 }
+@media (max-width: 560px) {
+  .main-top-inner {
+    padding: 15% 0px 2%;
+  }
+}
+@media (min-width: 1800px) {
+  .main-top {
+    max-height: 954px;
+  }
+}
+@media (max-width: 1800px) {
+  .main-top {
+    background-size: 132%;
+    background-repeat: no-repeat;
+    background-position: center bottom 23%;
+  }
+}
 @media (max-width: 900px) {
   .main-top-inner {
-    width: 95%;
+    width: 100%;
   }
 }
 @media (max-width: 560px) {
   .main-top {
-    max-height: 485px;
+    max-height: 602px;
     margin-top: 62px;
+    background-image: url("../images/top-back-sp.jpg");
+    background-position: left -48px bottom 13%;
+    background-size: 141%;
+    background-repeat: no-repeat;
   }
   .main-top-inner {
     display: inline-block;
@@ -129,11 +150,11 @@ main {
 }
 @media (max-width: 560px) {
   .main-top-inner-column-1 {
-    position: absolute;
+    width: 94%;
+    display: flex;
+    flex-direction: column;
     padding-bottom: 0;
-    top: 23%;
-    left: 2%;
-    z-index: 1;
+    margin: 0 auto;
   }
 }
 .main-top-inner-column-1 picture {
@@ -143,24 +164,27 @@ main {
 }
 .main-top-inner-column-1 picture:first-child {
   margin-bottom: -9%;
-  width: 125%;
+  width: 109%;
   margin-left: -9%;
   margin-top: -10%;
-  transform: rotate(2deg);
+  transform: rotate(4deg);
+  max-width: 748px;
 }
 .main-top-inner-column-1 picture img {
   width: 100%;
 }
 @media (max-width: 560px) {
   .main-top-inner-column-1 picture:first-child {
-    margin-left: 1%;
-    margin-top: -24%;
-    margin-bottom: 2%;
-    width: 120%;
+    margin-left: -3%;
+    margin-top: 0%;
+    margin-bottom: -8%;
+    width: 69%;
+    transform: none;
   }
   .main-top-inner-column-1 picture:last-child {
-    width: 177%;
-    align-self: flex-start;
+    width: 100%;
+    align-self: center;
+    margin-left: 0;
   }
 }
 
@@ -761,10 +785,16 @@ main {
   padding: 1% 0 2%;
   margin: 0;
   position: relative;
-  background-color: #F5FAFF;
   background-image: url(../images/me-back.jpg);
   background-size: cover;
   margin-bottom: 6%;
+}
+@media (max-width: 560px) {
+  .message {
+    background-position: center bottom -67px;
+    background-repeat: no-repeat;
+    padding: 1% 0 28%;
+  }
 }
 .message-tit {
   margin-bottom: 2%;
@@ -783,7 +813,7 @@ main {
   width: 90%;
   margin: 0 auto;
   max-width: 800px;
-  padding: 4% 2% 5%;
+  padding: 4% 0% 5%;
   position: relative;
 }
 @media (max-width: 560px) {
@@ -801,7 +831,6 @@ main {
 }
 @media (max-width: 560px) {
   .message-text {
-    text-align: center;
     font-size: 0;
   }
   .message-text p {
@@ -814,6 +843,7 @@ main {
 @media (max-width: 560px) and (max-width: 560px) {
   .message-text p {
     line-height: 2.2em;
+    text-align: justify;
   }
 }
 .message .ms-name {
@@ -951,7 +981,7 @@ main {
 }
 .policy-top {
   margin-top: 2%;
-  background-color: #004098;
+  background-color: #F5FAFF;
   text-align: center;
   padding: 1% 0;
 }
@@ -961,12 +991,12 @@ main {
 }
 @media (max-width: 560px) {
   .policy-top img {
-    width: 97%;
+    width: 89%;
   }
 }
 @media (max-width: 560px) {
   .policy-top {
-    padding: 9% 0;
+    padding: 4% 0;
   }
 }
 .policy-box {
@@ -1062,7 +1092,7 @@ main {
   }
 }
 .policy-box .policy-text .pol-tit p {
-  font-size: 2em;
+  font-size: clamp(1.875rem, 1.648rem + 1.14vw, 2.5rem);
   font-weight: bold;
   margin-left: 3%;
 }
@@ -1125,6 +1155,9 @@ main {
     text-align: center;
   }
 }
+.policy-box .policy-text-1 {
+  max-width: 531px;
+}
 .policy-box:nth-child(odd) .policy-text {
   left: 3%;
   right: auto;
@@ -1184,6 +1217,13 @@ main {
   width: 90%;
   max-width: 218px;
 }
+.image-column figure {
+  margin-bottom: 13%;
+  text-align: center;
+}
+.image-column figure figcaption {
+  font-size: 0.75em;
+}
 @media (max-width: 560px) {
   .image-column {
     text-align: center;
@@ -1195,6 +1235,11 @@ main {
 
 .profile-box {
   width: 80%;
+}
+@media (max-width: 560px) {
+  .profile-box {
+    width: 100%;
+  }
 }
 
 .profile-box-top {
@@ -1226,6 +1271,12 @@ main {
   padding: 0 5px;
   margin-bottom: 1%;
   margin-top: 1%;
+}
+@media (max-width: 560px) {
+  .profile-box-tit {
+    margin-bottom: 4%;
+    margin-top: 8%;
+  }
 }
 .profile-box-tit p {
   color: #004098;
@@ -1277,6 +1328,21 @@ main {
 @media (max-width: 560px) {
   .p-t-flex p {
     width: 96%;
+  }
+}
+
+@media (max-width: 560px) {
+  figure {
+    width: 61%;
+    margin: 0 auto;
+    margin-bottom: 10%;
+    margin-top: 5%;
+  }
+  figure img {
+    width: 100%;
+  }
+  figure figcaption {
+    font-size: 0.75em;
   }
 }
 

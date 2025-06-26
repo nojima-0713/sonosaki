@@ -63,6 +63,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom right;
+  padding-top: 2%;
 }
 .policy-top-inner {
   display: flex;
@@ -70,6 +71,7 @@
   width: 100%;
   max-width: 1527px;
   margin: 0 auto;
+  position: relative;
 }
 @media (max-width: 900px) {
   .policy-top-inner {
@@ -83,14 +85,17 @@
   }
 }
 .policy-top-left {
-  width: 64%;
+  width: 57%;
 }
 .policy-top-left .policy-top-image img {
-  width: 91%;
+  width: 100%;
+  margin-left: -4%;
+  margin-bottom: 3%;
 }
 @media (max-width: 900px) {
   .policy-top-left .policy-top-image img {
-    width: 100%;
+    margin-left: 0;
+    width: 118%;
   }
 }
 @media (max-width: 560px) {
@@ -114,7 +119,7 @@
 }
 @media (max-width: 900px) {
   .policy-top-three {
-    padding-left: 2%;
+    padding-left: 5%;
   }
 }
 @media (max-width: 560px) {
@@ -229,22 +234,45 @@
   }
 }
 .policy-top-right {
-  width: 40%;
+  width: 48%;
   z-index: 2;
-}
-.policy-top-right img {
-  width: 100%;
+  margin-left: -10%;
 }
 @media (max-width: 900px) {
   .policy-top-right {
-    width: 31%;
+    width: 48%;
+    margin-left: -5%;
   }
 }
 @media (max-width: 560px) {
   .policy-top-right {
-    width: 58%;
+    width: 73%;
     align-self: end;
-    margin-top: -13%;
+    margin-top: -11%;
+    margin-right: -5%;
+  }
+}
+.policy-top-right img {
+  width: 100%;
+}
+.policy-top-right .pol-next {
+  position: absolute;
+  right: -2%;
+  width: 30%;
+  bottom: -1%;
+}
+@media (max-width: 900px) {
+  .policy-top-right .pol-next {
+    right: 0%;
+    width: 34%;
+    bottom: 69%;
+  }
+}
+@media (max-width: 560px) {
+  .policy-top-right .pol-next {
+    right: 44%;
+    width: 58%;
+    bottom: 0%;
   }
 }
 
@@ -351,6 +379,7 @@
   .policy-columns .pol-columns-tit {
     padding: 2% 0%;
     width: 96%;
+    left: 2%;
   }
 }
 .policy-columns .pol-columns-tit::after {
@@ -382,19 +411,24 @@
   }
 }
 .policy-columns .pol-columns-tit p {
-  font-size: 2em;
+  font-size: clamp(1.875rem, 1.648rem + 1.14vw, 2.5rem);
   font-weight: bold;
   margin-left: 3%;
 }
 .policy-columns .tit-long::after {
   content: "";
   background-color: #004098;
-  width: 120%;
+  width: 124%;
   top: 0;
   bottom: 0;
   left: -50%;
   position: absolute;
   z-index: -1;
+}
+@media (max-width: 900px) {
+  .policy-columns .tit-long::after {
+    width: 135%;
+  }
 }
 @media (max-width: 560px) {
   .policy-columns .tit-long::after {

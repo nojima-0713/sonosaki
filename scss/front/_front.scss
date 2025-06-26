@@ -26,15 +26,30 @@ main{
     max-width: 1223px;
     padding: 10% 0px 6%;
     position: relative;
+    @include sp{
+      padding: 15% 0px 2%;
+    }
+  }
+  @include pc-max{
+    max-height: 954px;
+  }
+  @include pc{
+    background-size: 132%;
+    background-repeat: no-repeat;
+    background-position: center bottom 23%;
   }
   @include tab{
     &-inner{
-      width: 95%;
+      width: 100%;
     }
   }
   @include sp{
-    max-height: 485px;
+    max-height: 602px;
     margin-top: 62px;
+    background-image: url("../images/top-back-sp.jpg");
+    background-position: left -48px bottom 13%;
+    background-size: 141%;
+    background-repeat: no-repeat;
     &-inner{
       display: inline-block;
       p{
@@ -81,11 +96,11 @@ main{
   flex-direction: column;
   align-items: flex-start;
   @include sp{
-    position: absolute;
+    width: 94%;
+    display: flex;
+    flex-direction: column;
     padding-bottom: 0;
-    top: 23%;
-    left: 2%;
-    z-index: 1;
+    margin: 0 auto;
   }
   picture{
     width: 114%;
@@ -93,24 +108,27 @@ main{
     margin-left: -8%;
     &:first-child{
       margin-bottom: -9%;
-      width: 125%;
+      width: 109%;
       margin-left: -9%;
       margin-top: -10%;
-      transform: rotate(2deg);
+      transform: rotate(4deg);
+      max-width: 748px;
     }
     img{
       width: 100%;
     }
     @include sp{
       &:first-child{
-        margin-left: 1%;
-        margin-top: -24%;
-        margin-bottom: 2%;
-        width: 120%;
+        margin-left: -3%;
+        margin-top: 0%;
+        margin-bottom: -8%;
+        width: 69%;
+        transform: none;
       }
       &:last-child{
-        width: 177%;
-        align-self: flex-start;
+        width: 100%;
+        align-self: center;
+        margin-left: 0;
       }
     }
   }

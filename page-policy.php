@@ -61,11 +61,10 @@
         </div>
 
         <div class="policy-top-right">
-          <picture class="policy-top-image sa sa--up">
-            <source media="(max-width: 560px)" srcset="<?php echo get_template_directory_uri(); ?>/images/sono-policy-sp.png" alt="そのさき弘道 政策画像"> 
-            <source media="(min-width: 561px)" srcset="<?php echo get_template_directory_uri(); ?>/images/sono-policy.png" alt="そのさき弘道 政策画像">
+          <picture class="policy-top-image">
             <img src="<?php echo get_template_directory_uri(); ?>/images/sono-policy.png" alt="そのさき弘道 政策画像">
           </picture>
+          <img src="<?php echo get_template_directory_uri(); ?>/images/pol-next.png" alt="NEXT 新時代をつくる！" class="pol-next">
         </div>
         
       </div>
@@ -78,9 +77,9 @@
 
       <div class="policy-columns-top">
         <picture class="policy-top-image">
-          <source media="(max-width: 560px)" srcset="<?php echo get_template_directory_uri(); ?>/images/five-challange-sp.svg" alt="そのさき弘道5つのチャレンジ"> 
-          <source media="(min-width: 561px)" srcset="<?php echo get_template_directory_uri(); ?>/images/five-challange.svg" alt="そのさき弘道5つのチャレンジ">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/five-challange.svg" alt="そのさき弘道5つのチャレンジ">
+          <source media="(max-width: 560px)" srcset="<?php echo get_template_directory_uri(); ?>/images/pol-top.png" alt="そのさき弘道5つのビジョン"> 
+          <source media="(min-width: 561px)" srcset="<?php echo get_template_directory_uri(); ?>/images/five-challange.png" alt="そのさき弘道5つのビジョン">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/five-challange.png" alt="そのさき弘道5つのビジョン">
         </picture>
 
       </div>
@@ -91,7 +90,7 @@
             <span class="pol-columns-tit-num">
               01
             </span>
-            <p>安全保障、経済・食料安全保障</p>
+            <p>安全保障、<span class="aks">経済・食料安全保障</span></p>
           </div>
         </div>
 
@@ -217,7 +216,7 @@
             <span class="pol-columns-tit-num">
               05
             </span>
-            <p>地域づくり・地域内循環</p>
+            <p>地域づくり・<span class="aks">地域内循環</span></p>
           </div>
         </div>
 

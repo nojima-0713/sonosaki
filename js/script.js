@@ -176,5 +176,6 @@ $("#gallery").append(photos);
 $(document).ready(function() {
   if ($(window).width() <= 560) {
     $('.image-column').insertAfter('.profile-box-top');
+    $('.image-column figure').insertAfter('.p-c-text');
   }
 });

@@ -110,8 +110,7 @@ function add_css() {//関数名add_css_js()を作成
     wp_enqueue_style(
       'front-style',
       get_template_directory_uri() . '/css/frontpage.css',
-      array(),
-      date("ymdHis", filemtime( get_template_directory_uri().'/css/frontpage.css'))
+      array()
     );
   }
 

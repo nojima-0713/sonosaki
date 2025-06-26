@@ -75,18 +75,18 @@
   }
   &-top{
     margin-top: 2%;
-    background-color: $main-color;
+    background-color: $sub-color;
     text-align: center;
     padding: 1% 0;
     img{
       width: 100%;
       max-width: 423px;
       @include sp{
-        width: 97%;
+        width: 89%;
       }
     }
     @include sp{
-      padding: 9% 0;
+      padding: 4% 0;
     }
   }
   &-box{
@@ -173,7 +173,7 @@
           }
         }
         p{
-          font-size: 2em;
+          font-size: clamp(1.875rem, 1.648rem + 1.14vw, 2.5rem);
           font-weight: bold;
           margin-left: 3%;
         }
@@ -234,6 +234,9 @@
           }
         }
       }
+    }
+    .policy-text-1{
+      max-width: 531px;
     }
     &:nth-child(odd){
       .policy-text{

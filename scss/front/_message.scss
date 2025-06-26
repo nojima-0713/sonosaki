@@ -15,12 +15,14 @@
   padding: 1% 0 2%;
   margin: 0;
   position: relative;
-  
-  background-color: $sub-color;
-      background-image: url(../images/me-back.jpg);
-    background-size: cover;
+  background-image: url(../images/me-back.jpg);
+  background-size: cover;
   margin-bottom: 6%;
-
+  @include sp{
+    background-position: center bottom -67px;
+    background-repeat: no-repeat;
+    padding: 1% 0 28%;
+  }
   &-tit{
     margin-bottom: 2%;
     @include tab{
@@ -35,7 +37,7 @@
     width: 90%;
     margin: 0 auto;
     max-width: 800px;
-    padding: 4% 2% 5%;
+    padding: 4% 0% 5%;
     position: relative;
 
     @include sp{
@@ -51,7 +53,6 @@
       font-size: 1.2em;
     }
     @include sp{
-      text-align: center;
       font-size: 0;
       p{
         display: inline-block;
@@ -60,6 +61,7 @@
         line-height: 2.7em;
         @include sp{
           line-height: 2.2em;
+          text-align: justify;
         }
       }
     }

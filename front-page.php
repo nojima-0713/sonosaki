@@ -9,12 +9,14 @@
     <img src="<?php echo get_template_directory_uri(); ?>/images/jimin-logo.png" alt="" class="jimin-logo">
       <div class="main-top-inner-column-1">
         <picture>
-          <img src="<?php echo get_template_directory_uri(); ?>/images/top-catch.png" alt="" class="top-catch">
+          <source media="(max-width: 560px)" srcset="<?php echo get_template_directory_uri(); ?>/images/top-catch-sp.png" alt="" class="top-catch" alt="京都南部から閉塞感を打ち破る！"> 
+          <source media="(min-width: 561px)" srcset="<?php echo get_template_directory_uri(); ?>/images/top-catch.png" alt="" class="top-catch" alt="京都南部から閉塞感を打ち破る！">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/top-catch.png" alt="" class="top-catch" alt="京都南部から閉塞感を打ち破る！">
         </picture>
         <picture>
-          <source media="(max-width: 560px)" srcset="<?php echo get_template_directory_uri(); ?>/images/top-name-sp.svg" alt="衆議院京都府第六選挙区支部長 そのさき弘道（園崎ひろみち） トップ名前画像"> 
-          <source media="(min-width: 561px)" srcset="<?php echo get_template_directory_uri(); ?>/images/top-name.png" alt="衆議院京都府第六選挙区支部長 そのさき弘道（園崎ひろみち） トップ名前画像">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/top-name.png" alt="衆議院京都府第六選挙区支部長 そのさき弘道（園崎ひろみち） トップ名前画像">
+          <source media="(max-width: 560px)" srcset="<?php echo get_template_directory_uri(); ?>/images/top-name-2.png" alt="衆議院京都府第六選挙区支部長 そのさき弘道（園崎ひろみち） トップ名前画像"> 
+          <source media="(min-width: 561px)" srcset="<?php echo get_template_directory_uri(); ?>/images/top-name-2.png" alt="衆議院京都府第六選挙区支部長 そのさき弘道（園崎ひろみち） トップ名前画像">
+          <img src="<?php echo get_template_directory_uri(); ?>/images/top-name-2.png" alt="衆議院京都府第六選挙区支部長 そのさき弘道（園崎ひろみち） トップ名前画像">
         </picture>
       </div>
 
@@ -163,7 +165,7 @@
         <div class="p-box-image p-box-image-1 sa sa--up">
         </div>
         <div class="policy-text-wrapp">
-          <div class="policy-text sa sa--up">
+          <div class="policy-text sa sa--up policy-text-1">
             <div class="pol-tit">
               <span class="pol-tit-num">
                 01

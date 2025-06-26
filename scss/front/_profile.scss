@@ -50,6 +50,13 @@
     width: 90%;
     max-width: 218px;
   }
+  figure{
+    margin-bottom: 13%;
+    text-align: center;
+    figcaption{
+      font-size: .75em;
+    }
+  }
   @include sp{
     text-align: center;
     width: 50%;
@@ -60,6 +67,9 @@
 
 .profile-box{
   width: 80%;
+  @include sp{
+    width: 100%;
+  }
 }
 
 .profile-box-top{
@@ -88,7 +98,10 @@
   padding: 0 5px;
   margin-bottom: 1%;
   margin-top: 1%;
-
+  @include sp{
+    margin-bottom: 4%;
+    margin-top: 8%;
+  }
   p{
     color: $main-color;
     font-weight: bold;
@@ -138,6 +151,21 @@
     text-align: justify;
     @include sp{
       width: 96%;
+    }
+  }
+}
+
+figure{
+  @include sp{
+    width: 61%;
+    margin: 0 auto;
+    margin-bottom: 10%;
+    margin-top: 5%;
+    img{
+      width: 100%;
+    }
+    figcaption{
+      font-size: .75em;
     }
   }
 }
