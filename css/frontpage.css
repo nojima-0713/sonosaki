@@ -84,7 +84,7 @@ main {
   .main-top {
     background-size: 132%;
     background-repeat: no-repeat;
-    background-position: center bottom 23%;
+    background-position: center bottom 28%;
   }
 }
 @media (max-width: 900px) {
@@ -163,11 +163,11 @@ main {
   margin-left: -8%;
 }
 .main-top-inner-column-1 picture:first-child {
-  margin-bottom: -9%;
+  margin-bottom: -5%;
   width: 109%;
   margin-left: -9%;
   margin-top: -10%;
-  transform: rotate(2deg);
+  transform: rotate(4deg);
   max-width: 748px;
 }
 .main-top-inner-column-1 picture img {
@@ -813,7 +813,7 @@ main {
   width: 90%;
   margin: 0 auto;
   max-width: 800px;
-  padding: 4% 2% 5%;
+  padding: 4% 0% 5%;
   position: relative;
 }
 @media (max-width: 560px) {
@@ -1154,6 +1154,9 @@ main {
   .policy-box .policy-text .pol-text p {
     text-align: center;
   }
+}
+.policy-box .policy-text-1 {
+  max-width: 531px;
 }
 .policy-box:nth-child(odd) .policy-text {
   left: 3%;

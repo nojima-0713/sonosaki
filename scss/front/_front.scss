@@ -36,7 +36,7 @@ main{
   @include pc{
     background-size: 132%;
     background-repeat: no-repeat;
-    background-position: center bottom 23%;
+    background-position: center bottom 28%;
   }
   @include tab{
     &-inner{
@@ -107,11 +107,11 @@ main{
     z-index: 2;
     margin-left: -8%;
     &:first-child{
-      margin-bottom: -9%;
+      margin-bottom: -5%;
       width: 109%;
       margin-left: -9%;
       margin-top: -10%;
-      transform: rotate(2deg);
+      transform: rotate(4deg);
       max-width: 748px;
     }
     img{

@@ -14,7 +14,7 @@
 <meta property="og:title" content="そのさき弘道（園崎ひろみち） | 京都府第六選挙区支部長" />
 <meta property="og:description" content="京都府第六選挙区支部長 そのさき弘道（園崎ひろみち）のオフィシャルサイト。「京都南部から日本再生。」をスローガンとし、夢や挑戦であふれる国づくりに取り組みます。" />
 <link rel="icon alternate" href="/favicon.ico">
-<meta property="og:image" content="https://sonosakimirai.com/wp/wp-content/themes/sonosaki/images/ogp.jpg" />
+<meta property="og:image" content="https://sonosakimirai.com/wp/wp-content/themes/sonosaki/images/ogp.png" />
 <link rel="apple-touch-icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon-180x180.png">
 <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/icon-192x192.png">
 
