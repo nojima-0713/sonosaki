@@ -113,6 +113,12 @@
       
       <div class="message-columns">
         <div class="message-text">
+          <p>これまで城陽市議会議員約7年、京都府議会議員（城陽市選挙区）約10年、地元をより良くするため知恵を絞り、
+また地元を通じて京都府全体に様々な提案を行ってまいりました。<br>
+2023年6月からは、地元京都南部12市町村をより元気により暮らしやすい地域とするため、
+またその事を通じて、日本の抱える諸課題解決に向け、全力で活動をしております。</p>
+        </div>
+        <div class="message-text">
           <p>私たちにとって、今の日本は本当に生きやすい社会でしょうか？<br
 >人口減少・少子高齢化、高騰する物の値段に所得が追いついていかない、格差と貧困の連鎖。<br
 >ネットを中心とした誹謗中傷。自殺による死亡率は先進国の中で一番多い……。<br
@@ -375,7 +381,7 @@
         <div class="profile-column image-column">
           <figure>
                     <img src="<?php echo get_template_directory_uri(); ?>/images/prof-image.jpg" alt="そのさき弘道　プロフィール画像">
-  <figcaption>中学１年生の夏休み、国会議事堂前にて</figcaption>
+  <figcaption>中学１年生の夏休み、国会議事堂前にて<br>（一番右）</figcaption>
 </figure>
 
           <img src="<?php echo get_template_directory_uri(); ?>/images/prof-image.png" alt="そのさき弘道　プロフィール画像">

@@ -130,9 +130,14 @@ main {
 .jimin-logo {
   position: absolute;
   top: 3%;
-  right: 3%;
+  left: -2%;
   width: 20%;
   max-width: 100px;
+}
+@media (max-width: 900px) {
+  .jimin-logo {
+    left: 2%;
+  }
 }
 @media (max-width: 560px) {
   .jimin-logo {
@@ -162,6 +167,11 @@ main {
   z-index: 2;
   margin-left: -8%;
 }
+@media (max-width: 900px) {
+  .main-top-inner-column-1 picture {
+    margin-left: 0%;
+  }
+}
 .main-top-inner-column-1 picture:first-child {
   margin-bottom: -5%;
   width: 109%;
@@ -169,6 +179,11 @@ main {
   margin-top: -10%;
   transform: rotate(4deg);
   max-width: 748px;
+}
+@media (max-width: 900px) {
+  .main-top-inner-column-1 picture:first-child {
+    margin-left: 1%;
+  }
 }
 .main-top-inner-column-1 picture img {
   width: 100%;
@@ -729,7 +744,7 @@ main {
   max-width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: bottom;
+  object-position: center;
   width: 100%;
   transition: all 0.5s cubic-bezier(0.37, 0.16, 0.12, 1);
 }

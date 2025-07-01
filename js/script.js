@@ -128,49 +128,48 @@ if (touch) { // remove all :hover stylesheets
         }
     } catch (ex) {}}
 
- /*Instagram 表示*/
 
-$.getJSON("https://sonosakimirai.com/wp/wp-content/themes/sonosaki/php/instagram.php", function(instagram_data){
+   /*Instagram 表示*/
 
-const gallery_data = instagram_data["business_discovery"]["media"]["data"];
-let photos = "";
+    $.getJSON("https://sonosakimirai.com/wp/wp-content/themes/sonosaki-renew/php/instagram.php", function(instagram_data){
 
+    const gallery_data = instagram_data["business_discovery"]["media"]["data"];
+    let mediaItems = "";
+    
+    if (window.matchMedia && window.matchMedia('(max-device-width: 560px)').matches) {
+      const photo_length_sp = 4;
 
-if (window.matchMedia && window.matchMedia('(max-device-width: 560px)').matches) {
-  const photo_length_sp = 4;
-  for(let i = 0; i < photo_length_sp ;i++){
-    if (!gallery_data[i].media_url) {
-      continue;
-    }
-    if(gallery_data[i].media_url.indexOf('video')>0){
-      photos += '<li class="gallery-item"><a href="' + gallery_data[i].permalink + '" target="_blank"><svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" width="300px" height="300px" viewBox="0 0 300 300"><g><rect x="95.7" y="69.2" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="10" width="143.7" height="127.3"/><polyline fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="60.6,153.7 60.6,230.8 138.1,230.8 	"/></g></svg><video src="' + gallery_data[i].media_url + '" controls></video></a></li>';
-    } 
-    else {
-      photos += '<li class="gallery-item"><a href="' + gallery_data[i].permalink + '" target="_blank"><svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" width="300px" height="300px" viewBox="0 0 300 300"><g><rect x="95.7" y="69.2" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="10" width="143.7" height="127.3"/><polyline fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="60.6,153.7 60.6,230.8 138.1,230.8 	"/></g></svg><img src="' + gallery_data[i].media_url + '"></a></li>';
-    }
-  }
-
-}else{
-  const photo_length = 6;
-
-  for(let i = 0; i < photo_length ;i++){
-    if (!gallery_data[i].media_url) {
-      continue;
-    }
+      for (let i = 0; i < photo_length_sp; i++) {
+        const mediaType = gallery_data[i].media_type;
+        
   
-    if(gallery_data[i].media_url.indexOf('video')>0){
-      photos += '<li class="gallery-item"><a href="' + gallery_data[i].permalink + '" target="_blank"><svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" width="300px" height="300px" viewBox="0 0 300 300"><g><rect x="95.7" y="69.2" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="10" width="143.7" height="127.3"/><polyline fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="60.6,153.7 60.6,230.8 138.1,230.8 	"/></g></svg><video src="' + gallery_data[i].media_url + '" controls></video></a></li>';
-    } 
-    else {
-      photos += '<li class="gallery-item"><a href="' + gallery_data[i].permalink + '" target="_blank"><svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" width="300px" height="300px" viewBox="0 0 300 300"><g><rect x="95.7" y="69.2" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="10" width="143.7" height="127.3"/><polyline fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="60.6,153.7 60.6,230.8 138.1,230.8 	"/></g></svg><img src="' + gallery_data[i].media_url + '"></a></li>';
+        if (mediaType === "IMAGE") {
+          // 画像を表示
+          mediaItems += '<li class="gallery-item"><a href="' + gallery_data[i].permalink + '" target="_blank"><svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" width="300px" height="300px" viewBox="0 0 300 300"><g><rect x="95.7" y="69.2" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="10" width="143.7" height="127.3"/><polyline fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="60.6,153.7 60.6,230.8 138.1,230.8 	"/></g></svg><img src="' + gallery_data[i].media_url + '"></a></li>';
+        } else if (mediaType === "VIDEO") {
+          // 動画を表示
+          mediaItems += '<li class="gallery-item"><a href="' + gallery_data[i].permalink + '" target="_blank"><svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" width="300px" height="300px" viewBox="0 0 300 300"><g><rect x="95.7" y="69.2" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="10" width="143.7" height="127.3"/><polyline fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="60.6,153.7 60.6,230.8 138.1,230.8 	"/></g></svg><img src="' + gallery_data[i].thumbnail_url + '"></a></li>';
+        }
+      }
+    }else{
+      const photo_length = 8;
+    
+      for (let i = 0; i < photo_length; i++) {
+        const mediaType = gallery_data[i].media_type;
+        
+  
+        if (mediaType === "IMAGE") {
+          // 画像を表示
+          mediaItems += '<li class="gallery-item"><a href="' + gallery_data[i].permalink + '" target="_blank"><svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" width="300px" height="300px" viewBox="0 0 300 300"><g><rect x="95.7" y="69.2" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="10" width="143.7" height="127.3"/><polyline fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="60.6,153.7 60.6,230.8 138.1,230.8 	"/></g></svg><img src="' + gallery_data[i].media_url + '"></a></li>';
+        } else if (mediaType === "VIDEO") {
+          // 動画を表示
+          mediaItems += '<li class="gallery-item"><a href="' + gallery_data[i].permalink + '" target="_blank"><svg version="1.1" id="layer1" xmlns="http://www.w3.org/2000/svg" width="300px" height="300px" viewBox="0 0 300 300"><g><rect x="95.7" y="69.2" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="10" width="143.7" height="127.3"/><polyline fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="60.6,153.7 60.6,230.8 138.1,230.8 	"/></g></svg><img src="' + gallery_data[i].thumbnail_url + '"></a></li>';
+        }
+      }
     }
     
-  }
-}
-
-$("#gallery").append(photos); 
-
-});
+    $("#gallery").append(mediaItems); 
+    });
 
 
 $(document).ready(function() {
